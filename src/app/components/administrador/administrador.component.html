@@ -1,54 +1,53 @@
-<nav class="nav">
-    <a class="nav-inter" href="#">RIPPPA</a>
-    <a class="nav-inter" href="interfaz_candidatos.html">Convocatorias</a>
-</nav>
-<div style="width: 600px; position: relative; top: 90px; left: 50px; ">
-    <h1 class="display-4" style="position: relative; left: 100px;">Registrar Usuario</h1>
-    <form name="ini">
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Rol">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Dirección">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" id="strNombre" placeholder="Nombre">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Código de Empleado">
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" placeholder="Contraseña">
-            <small class="form-text text-muted">Tu contraseña debe ser de al menos 8 caracteres cualesquiera sin superar
-                los 16</small>
-        </div>
-        <div class="form-group">
-            <input class="form-control" type="password" value="" placeholder="Comprobar Contraseña">
-        </div>
-        <button class="btn btn-success" style="position:relative; left:237px">Registrarse</button>
-        <a href="#"><small class="form-text text-muted" style="position:relative; left:200px">¿Ya eres usuario? Inicia
-                sesión</small></a>
-    </form>
-</div>
+<div class="row">
 
-<table id="tab1" class="tablausr table table-bordered table-white">
-    <tr>
-        <td>Rol</td>
-        <td>Nombre</td>
-        <td>Direccion</td>
-        <td>C. Empleado</td>
-        <td>Eliminar</td>
-        <td>Editar</td>
-    </tr>
-    <tr>
-        <td>ROL</td>
-        <td>NOMBRE</td>
-        <td>DIRECCION</td>
-        <td>CODEMPLEADO</td>
-        <td><button class="btn btn-secondary">Eliminar</button></td>
-        <td><button class="btn btn-secondary">Editar</button></td>
-    </tr>
-</table>
-<div style="position: relative; left: 50%;">
-    <p>No hay usuarios.</p>
+    <div class="col-lg-5 col-md-12 mt-4 mb-4">
+        <h2>Administradores</h2>
+        <form name="ini">
+            <div class="form-group">
+                <select class="form-control">
+                    <option value="">TICS</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control">
+                    <option value="">Comite RIPPPA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" type="text" id="strNombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Código de Empleado">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" value="" placeholder="Comprobar Contraseña">
+            </div>
+            <button class="btn btn-outline-success btn-block">Registrarse</button>
+        </form>
+    </div>
+
+    <div class="col-lg-7 col-md-12 mt-4 mb-4">
+        <table id="tab1" class="tablausr table table-bordered table-white">
+            <tr>
+                <td>Rol</td>
+                <td>Nombre</td>
+                <td>Direccion</td>
+                <td>C. Empleado</td>
+                <td>Eliminar</td>
+                <td>Editar</td>
+            </tr>
+            <tr>
+                <td>ROL</td>
+                <td>NOMBRE</td>
+                <td>DIRECCION</td>
+                <td>CODEMPLEADO</td>
+                <td><button class="btn btn-outline-danger">Eliminar</button></td>
+                <td><button class="btn btn-outline-warning">Editar</button></td>
+            </tr>
+        </table>
+    </div>
 </div>
