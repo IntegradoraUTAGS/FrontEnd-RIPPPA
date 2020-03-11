@@ -1,22 +1,23 @@
-<div class="nav">
-    <a class="nav-inter" href="#">RIPPPA</a>
-    <a class="nav-inter" href="#">Convocatorias</a>
-</div>
-<div style="position: relative; top: 180px;">
-    <h1 class="display-4 titulo">Iniciar Sesión</h1>
-    <form method="POST" name="ini" action="#">
-        <div class="form-group usuario" style="text-align: center; width: 37%;">
-            <label for="exampleInputEmail1">Nombre de Usuario</label>
-            <input type="text" class="form-control mx-sm-3" name="usuario" aria-describedby="emailHelp"
-                placeholder="Ingresa Usuario">
+<main role="main" class="container my-auto">
+    <div class="row">
+        <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3
+            col-12">
+            <img class="img-fluid mx-auto d-block " src="assets/img/uta-logo.png" />
 
+            <form>
+                <div class="form-group">
+                    <label>Código de empleado</label>
+                    <input class="form-control" type="email" placeholder="Código de empleado">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input class="form-control" type="password" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-block mb-2">
+                    Entrar
+                </button>
+                <br>
+            </form>
         </div>
-        <div class="form-group contraseña" style="text-align: center; width: 37%;">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="password" class="form-control mx-sm-3" name="contrasena" placeholder="Ingresa Contraseña">
-        </div>
-        <button type="submit" class="btn btn-success boton">Ingresar</button>
-        <a href="register.html"><small class="form-text text-muted contraseña2">¿Olvidaste tu contraseña?</small></a>
-
-    </form>
-</div>
+    </div>
+</main>
