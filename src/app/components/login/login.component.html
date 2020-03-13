@@ -4,20 +4,27 @@
             col-12">
             <img class="img-fluid mx-auto d-block " src="assets/img/uta-logo.png" />
 
-            <form>
+            <form class="needs-validation" (ngSubmit)="onLogin(form)" #form="ngForm">
                 <div class="form-group">
                     <label>Código de empleado</label>
-                    <input class="form-control" type="email" placeholder="Código de empleado">
+                    <input class="form-control" [(ngModel)]="administrador.numCodigoEmpleado" maxlength="4"
+                        type="number" name="numEmpleado" #numEmpleado="ngModel"
+                        [ngClass]="{ 'is-invalid': !numEmpleado.valid && numEmpleado.touched,'is-valid': numEmpleado.valid}"
+                        required>
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input class="form-control" type="password" placeholder="Contraseña">
+                    <input class="form-control" [(ngModel)]="administrador.strContrasenia" maxlength="8" type="password"
+                        name="password" #password="ngModel"
+                        [ngClass]="{ 'is-invalid': !password.valid && password.touched,'is-valid': password.valid}"
+                        required>
                 </div>
-                <button type="submit" class="btn btn-outline-success btn-block mb-2">
-                    Entrar
+                <button type="submit" class="btn btn-outline-success btn-block mb-2" [disabled]="!form.valid">
+                    ¡Ingresar!
                 </button>
                 <br>
             </form>
+
         </div>
     </div>
 </main>
