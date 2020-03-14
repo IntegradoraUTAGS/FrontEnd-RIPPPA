@@ -1,15 +1,37 @@
+import { AdministradorService } from '../../services/administrador.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AdministradorModel } from '../../models/administrador';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [AdministradorService]
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  administrador: AdministradorModel = new AdministradorModel();
+  constructor(public router: Router, private service: AdministradorService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  onLogin(form: NgForm) {
+    this.service.login(this.administrador).then((administrador: any) => {
+      console.log(administrador.persona);
+      console.warn(administrador.token);
+      form.reset();
+      localStorage.setItem('token', administrador.token);
+      this.router.navigateByUrl('menu');
+    }).catch((err: any) => {
+      console.log(err);
+    });
+  }
+
+
+
+
 
 }

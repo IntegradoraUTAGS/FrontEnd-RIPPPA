@@ -1,7 +1,8 @@
 export class AdministradorModel {
-    idRol: string;
-    idDireccion: string;
-    strNombre: string;
-    nmbCodigoEmpleado: number;
+    _id?: string;
+    idRol?: string;
+    idDireccion?: string;
+    strNombre?: string;
+    numCodigoEmpleado: number;
     strContrasenia: string;
 }
