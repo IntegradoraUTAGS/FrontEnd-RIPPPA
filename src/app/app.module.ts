@@ -10,6 +10,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
+import { MaestriasComponent } from './components/maestrias/maestrias.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { OtrosConocimientosComponent } from './components/otros-conocimientos/ot
     NavbarComponent,
     FooterComponent,
     InicioComponent,
-    OtrosConocimientosComponent
+    OtrosConocimientosComponent,
+    MaestriasComponent
   ],
   imports: [
     BrowserModule,

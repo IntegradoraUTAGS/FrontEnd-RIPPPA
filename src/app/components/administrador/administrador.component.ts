@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import { HttpClient } from '@angular/common/http';
 import { AdministradorModel } from 'src/app/models/administrador';
-import { threadId } from 'worker_threads';
 
 
 @Component({
@@ -22,8 +21,8 @@ export class AdministradorComponent implements OnInit {
   mostrarAdmin(){
     this.adminService.mostrarAdmin().subscribe((result: any) => this.admin = result);
   }
-  registrarAdmin(){
-    this.adminService.registrarAdmin().subscribe((result:any) => this.admin = result);
+  registrarAdmin(admin){
+    this.adminService.registrarAdmin(admin).subscribe((result:any) => this.admin = result);
   }
   eliminarAdmin(_id){
     this.adminService.eliminarAdmin(_id).subscribe((result:any) => this.admin = result);
