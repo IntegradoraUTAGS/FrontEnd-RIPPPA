@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
+import { AcademiaComponent } from './components/academia/academia.component';
+import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerca-de-nosotros.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HttpClientModule } from "@angular/common/http";
     AdministradorComponent,
     NavbarComponent,
     FooterComponent,
-    InicioComponent
+    InicioComponent,
+    AcademiaComponent,
+    AcercaDeNosotrosComponent
   ],
   imports: [
     BrowserModule,
