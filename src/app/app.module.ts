@@ -11,6 +11,12 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { AcademiaComponent } from './components/academia/academia.component';
 import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerca-de-nosotros.component';
+import { DireccionesComponent } from './direcciones/direcciones.component';
+import { ConocimientosComponent } from './conocimientos/conocimientos.component';
+import { OtrosConocimientosComponent } from './otros-conocimientos/otros-conocimientos.component';
+import { PeriodoConvocatoriasComponent } from './periodo-convocatorias/periodo-convocatorias.component';
+import { MaestriasComponent } from './maestrias/maestrias.component';
+import { LicenciaturasComponent } from './licenciaturas/licenciaturas.component';
 
 
 @NgModule({
@@ -23,6 +29,12 @@ import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerc
     InicioComponent,
     AcademiaComponent,
     AcercaDeNosotrosComponent
+    DireccionesComponent,
+    ConocimientosComponent,
+    OtrosConocimientosComponent,
+    PeriodoConvocatoriasComponent,
+    MaestriasComponent,
+    LicenciaturasComponent
   ],
   imports: [
     BrowserModule,
