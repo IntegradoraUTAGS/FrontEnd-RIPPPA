@@ -10,6 +10,7 @@ import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
+import { ProfesorComponent } from "./components/profesor/profesor.component";
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'Licenciaturas', component: LicenciaturasComponent },
   { path: 'Maestrias', component: MaestriasComponent },
   { path: 'OtrosConocimientos', component: OtrosConocimientosComponent },
-  { path: 'Periodo', component: PeriodoConvocatoriasComponent }
+  { path: 'Periodo', component: PeriodoConvocatoriasComponent },
+  { path: 'Profesor', component: ProfesorComponent }
 ];
 
 @NgModule({

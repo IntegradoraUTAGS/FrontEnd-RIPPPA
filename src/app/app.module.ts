@@ -17,6 +17,7 @@ import { OtrosConocimientosComponent } from './components/otros-conocimientos/ot
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas.component';
+import { ProfesorComponent } from './components/profesor/profesor.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas
     OtrosConocimientosComponent,
     PeriodoConvocatoriasComponent,
     MaestriasComponent,
-    LicenciaturasComponent
+    LicenciaturasComponent,
+    ProfesorComponent
   ],
   imports: [
     BrowserModule,
