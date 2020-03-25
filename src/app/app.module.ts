@@ -11,6 +11,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
+import { AdministradorModel} from './models/administrador';
+import { AdministradorService } from './services/administrador.service';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import { MaestriasComponent } from './components/maestrias/maestrias.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AdministradorModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

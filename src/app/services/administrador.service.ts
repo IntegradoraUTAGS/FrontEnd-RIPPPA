@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";;
 import { AdministradorModel } from '../models/administrador';
 
-@Injectable({ providedIn: 'root' })
+
+@Injectable({ 
+    providedIn: 'root'
+})
 export class AdministradorService {
 
     private url: string = 'http://localhost:3000/api/administrador/'
