@@ -1,0 +1,13 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarLicenciatura(forma)" #forma="ngForm">
+
+    <div class="form-group">
+        <h3>Licenciaturas</h3>
+        <input class="form-control" type="text" placeholder="licenciatura" id="validationServer01"
+            name="strLicenciatura" [(ngModel)]="licenciatura.strLicenciatura" #strLicenciatura="ngModel" required>
+
+        <div class=" invalid-feedback ">
+            Favor de ingresar una licenciatura.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">AGREGAR</button>
+</form>
