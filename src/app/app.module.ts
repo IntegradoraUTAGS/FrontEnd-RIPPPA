@@ -10,7 +10,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
-import { AdministradorModel} from './models/administrador';
+import { AdministradorModel } from './models/administrador';
 import { AdministradorService } from './services/administrador.service';
 import { AcademiaComponent } from './components/academia/academia.component';
 import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerca-de-nosotros.component';
@@ -35,7 +35,7 @@ import { HerramientasComponent } from './components/herramientas/herramientas.co
     FooterComponent,
     InicioComponent,
     OtrosConocimientosComponent,
-    MaestriasComponent
+    MaestriasComponent,
     AcademiaComponent,
     AcercaDeNosotrosComponent,
     DireccionesComponent,

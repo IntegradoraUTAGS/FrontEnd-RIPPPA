@@ -18,7 +18,8 @@
                 <input class="form-control" type="text" [(ngModel)]="admin.strNombre" placeholder="Nombre">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado">
+                <input class="form-control" type="text" [(ngModel)]="admin.numCodigoEmpleado"
+                    placeholder="Código de Empleado">
             </div>
             <div class="form-group">
                 <input class="form-control" type="password" [(ngModel)]="admin.strContrasenia" placeholder="Contraseña">
@@ -39,7 +40,8 @@
                 <td>C. Empleado</td>
                 <td>Eliminar</td>
                 <td>Editar</td>
-            </tr><tr *ngFor="let adm of admin">
+            </tr>
+            <tr *ngFor="let adm of admin">
                 <td>{{adm.idRol}}</td>
                 <td>{{adm.strNombre}}</td>
                 <td>{{adm.idDireccion}}</td>
