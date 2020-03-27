@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'Herramientas', component: HerramientasComponent }
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
