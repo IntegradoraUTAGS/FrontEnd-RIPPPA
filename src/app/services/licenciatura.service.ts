@@ -15,19 +15,19 @@ export class LicenciaturaService {
         return this.http.get(`${this.url}/obtener`).toPromise();
     }
 
-    obtenerUsuario(idLicenciatura: string) {
+    obtenerLicenciaturaid(idLicenciatura: String) {
         return this.http.get(`${this.url}/obtener/${idLicenciatura}`).toPromise();
     }
 
-    registrarUsuario(licenciatura: LicenciaturaModel) {
+    registrarLicenciatura(licenciatura: LicenciaturaModel) {
         return this.http.post(`${this.url}/registrar`, licenciatura).toPromise();
     }
 
-    actualizarUsuario(idLicenciatura: string, licenciatura: LicenciaturaModel) {
+    actualizarLicenciatura(idLicenciatura: String, licenciatura: LicenciaturaModel) {
         return this.http.put(`${this.url}/actualizar/${idLicenciatura}`, licenciatura).toPromise();
     }
 
-    eliminarUsuario(idLicenciatura: string) {
+    eliminarLicenciatura(idLicenciatura: String) {
         return this.http.delete(`${this.url}/eliminar/${idLicenciatura}`).toPromise();
     }
 }

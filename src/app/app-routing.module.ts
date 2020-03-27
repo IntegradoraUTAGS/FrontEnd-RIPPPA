@@ -11,22 +11,24 @@ import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
 import { ProfesorComponent } from "./components/profesor/profesor.component";
+import { HerramientasComponent } from "./components/herramientas/herramientas.component";
 
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'administrador', component: AdministradorComponent },
-  { path: 'otros-conocimientos', component:OtrosConocimientosComponent},
-  { path: 'academia', component: AcademiaComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Administrador', component: AdministradorComponent },
+  { path: 'Academia', component: AcademiaComponent },
   { path: 'AcercaDe', component: AcercaDeNosotrosComponent },
   { path: 'Conocimientos', component: ConocimientosComponent },
   { path: 'Licenciaturas', component: LicenciaturasComponent },
   { path: 'Maestrias', component: MaestriasComponent },
   { path: 'Periodo', component: PeriodoConvocatoriasComponent },
-  { path: 'Profesor', component: ProfesorComponent }
+  { path: 'Profesor', component: ProfesorComponent },
+  { path: 'Herramientas', component: HerramientasComponent }
 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,5 +1,5 @@
 export class LicenciaturaModel {
-    _id?: string;
+    _id?: String;
     strLicenciatura: String;
-    blnDisponible: Boolean;
+    blnDisponible?: Boolean;
 }

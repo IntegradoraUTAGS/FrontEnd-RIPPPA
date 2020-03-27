@@ -20,6 +20,10 @@ import { PeriodoConvocatoriasComponent } from './components/periodo-convocatoria
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas.component';
 import { ProfesorComponent } from './components/profesor/profesor.component';
+import { ActualizarComponent } from './components/licenciaturas/actualizar/actualizar.component';
+import { RegistrarComponent } from './components/licenciaturas/registrar/registrar.component';
+import { TablaComponent } from './components/licenciaturas/tabla/tabla.component';
+import { HerramientasComponent } from './components/herramientas/herramientas.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { ProfesorComponent } from './components/profesor/profesor.component';
     PeriodoConvocatoriasComponent,
     MaestriasComponent,
     LicenciaturasComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    ActualizarComponent,
+    RegistrarComponent,
+    TablaComponent,
+    HerramientasComponent
   ],
   imports: [
     BrowserModule,
