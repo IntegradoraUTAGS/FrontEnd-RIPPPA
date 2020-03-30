@@ -13,6 +13,7 @@ import { OtrosConocimientosComponent } from './components/otros-conocimientos/ot
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { AdministradorModel} from './models/administrador';
 import { AdministradorService } from './services/administrador.service';
+import { DireccionesComponent } from './components/direcciones/direcciones.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AdministradorService } from './services/administrador.service';
     FooterComponent,
     InicioComponent,
     OtrosConocimientosComponent,
-    MaestriasComponent
+    MaestriasComponent,
+    DireccionesComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class AdministradorService {
     eliminarAdmin(_id){
         return this.http.delete(`${this.url}eliminar/:${_id}`);
     }
-    actualAdmin( administrador:AdministradorModel, _id:Number){
+    actualAdmin( administrador:AdministradorModel, _id:string){
         return this.http.put(`${this.url}actualizar/:${_id}`,administrador);
     }
 }
