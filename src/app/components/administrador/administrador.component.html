@@ -2,7 +2,7 @@
 
     <div class="col-lg-5 col-md-12 mt-4 mb-4">
         <h2>Administradores</h2>
-        <form class="animated fadeIn fast">
+        <form class="animated fadeIn fast" (ngSubmit)="registrarAdmin()" #forma="ngForm">
             <div class="form-group">
                 <select class="form-control">
                     <option value="">TICS</option>
@@ -13,20 +13,23 @@
                     <option value="">Comite RIPPPA</option>
                 </select>
             </div>
-
             <div class="form-group">
-                <input class="form-control" type="text" [(ngModel)]="admin.strNombre" placeholder="Nombre">
+                <input class="form-control" type="text" name="strNombre" required [(ngModel)]="admin.strNombre"
+                    placeholder="Nombre" #strNombre="ngModel">
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado">
+                <input class="form-control" type="text" name="numCodigoEmpleado" required
+                    [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado" #numCodigoEmpleado="ngModel">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" [(ngModel)]="admin.strContrasenia" placeholder="Contraseña">
+                <input class="form-control" type="password" name="strContrasenia" required
+                    [(ngModel)]="admin.strContrasenia" placeholder="Contraseña" #strContrasenia="ngModel">
             </div>
             <div class="form-group">
                 <input class="form-control" type="password" placeholder="Comprobar Contraseña">
             </div>
-            <button class="btn btn-outline-success btn-block">Registrarse</button>
+            <button class="btn btn-outline-success btn-block" type="submit"
+                [disabled]="!forma.valid">Registrarse</button>
         </form>
     </div>
 
@@ -39,7 +42,8 @@
                 <td>C. Empleado</td>
                 <td>Eliminar</td>
                 <td>Editar</td>
-            </tr><tr *ngFor="let adm of admin">
+            </tr>
+            <tr *ngFor="let adm of admin">
                 <td>{{adm.idRol}}</td>
                 <td>{{adm.strNombre}}</td>
                 <td>{{adm.idDireccion}}</td>
