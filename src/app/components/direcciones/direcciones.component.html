@@ -1,1 +1,27 @@
-<p>direcciones works!</p>
+
+<div class="col-lg-4 col-md-12 mt-4 mb-4">
+    <h2>Direcciónes Académicas</h2>
+    <form class="animated fadeIn fast" (ngSubmit)="registrarDirecciones()" #forma="ngForm">
+        <div class="form-group">
+            <input class="form-control" type="text" name="strNombre" placeholder="Nombre" [(ngModel)]="direcciones.strNombre" 
+            #strNombre ="ngModel">
+        </div>
+        <button class="btn btn-outline-success btn-block">Registrarse</button>
+    </form>
+</div>
+
+<div class="col-lg-8 col-md-12 mt-4 mb-4">
+    <table id="tab1" class="tablausr table table-bordered table-white">
+        <tr>
+            <td>Nombre</td>
+            <td>Eliminar</td>
+            <td>Editar</td>
+        </tr>
+        <tr>
+            <td>NOMBRE</td>
+            <td><button class="btn btn-outline-danger" (click)="eliminarDirecciones(direcciones._id)">Eliminar</button></td>
+            <td><button class="btn btn-outline-warning" (click)="actualDirecciones(direcciones._id)">Editar</button></td>
+        </tr>
+    </table>
+</div>
+

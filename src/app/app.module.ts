@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
 import { AdministradorModel } from './models/administrador';
 import { AdministradorService } from './services/administrador.service';
+import { DireccionesComponent } from './components/direcciones/direcciones.component';
 import { AcademiaComponent } from './components/academia/academia.component';
 import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerca-de-nosotros.component';
 import { DireccionesComponent } from './components/direcciones/direcciones.component';
@@ -26,6 +27,7 @@ import { TablaComponent } from './components/licenciaturas/tabla/tabla.component
 import { HerramientasComponent } from './components/herramientas/herramientas.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { HerramientasComponent } from './components/herramientas/herramientas.co
     InicioComponent,
     OtrosConocimientosComponent,
     MaestriasComponent,
+    DireccionesComponent,
     AcademiaComponent,
     AcercaDeNosotrosComponent,
     DireccionesComponent,
@@ -49,6 +52,7 @@ import { HerramientasComponent } from './components/herramientas/herramientas.co
     RegistrarComponent,
     TablaComponent,
     HerramientasComponent
+
   ],
   imports: [
     BrowserModule,

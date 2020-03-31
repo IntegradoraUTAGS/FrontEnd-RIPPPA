@@ -9,7 +9,7 @@ import { AdministradorModel } from '../models/administrador';
 export class AdministradorService {
 
     private url: string = 'http://localhost:3000/api/administrador/'
-    constructor(private http: HttpClient, private administrador:AdministradorModel) { }
+    constructor(private http: HttpClient) { }
 
     login(administrador: AdministradorModel) {
         return this.http.post(this.url + 'login', administrador).toPromise();
@@ -23,7 +23,7 @@ export class AdministradorService {
     eliminarAdmin(_id){
         return this.http.delete(`${this.url}eliminar/:${_id}`);
     }
-    actualAdmin(_id){
-        return this.http.put(`${this.url}actualizar/:${_id}`,this.administrador);
+    actualAdmin( administrador:AdministradorModel, _id:string){
+        return this.http.put(`${this.url}actualizar/:${_id}`,administrador);
     }
 }
