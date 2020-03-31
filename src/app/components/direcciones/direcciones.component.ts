@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { DireccionesModel } from 'src/app/models/direcciones';
 import { DireccionesService } from 'src/app/services/direcciones.service';
 
+
 @Component({
   selector: 'app-direcciones',
   templateUrl: './direcciones.component.html',
   styleUrls: ['./direcciones.component.css']
 })
 export class DireccionesComponent implements OnInit {
+  
  direcciones: DireccionesModel = new DireccionesModel();
   constructor(private direccion: DireccionesService) { }
 
@@ -26,4 +28,5 @@ export class DireccionesComponent implements OnInit {
   actualDirecciones(_id){
     this.direccion.actualDirecciones(this.direcciones, _id).subscribe((result: any) => this.direcciones = result);
   }
+
 }
