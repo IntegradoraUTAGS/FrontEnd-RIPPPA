@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcademiaComponent implements OnInit {
 
+
+  academias: any;
+  idAcademia: string;
+
   constructor() { }
 
   ngOnInit(): void {

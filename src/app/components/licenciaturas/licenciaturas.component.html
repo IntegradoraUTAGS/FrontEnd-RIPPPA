@@ -3,13 +3,13 @@
     <app-registrar *ngIf="componentes.registrarComponent" (salida)="obtenerLicenciaturas()"></app-registrar>
 
     <app-actualizar *ngIf="componentes.actualizarComponent" [componentes]="componentes"
-      [idLicenciatura]="idLicenciatura"> (salida)="obtenerLicenciaturas()"
-    </app-actualizar>
+      [idLicenciatura]="idLicenciatura"></app-actualizar>
 
   </div>
 
   <div class="col-lg-7 col-md-12 mt-4 mb-4">
-    <app-tabla *ngIf="componentes.tablaComponent" [componentes]="componentes" (salida)="monstrarActualizar($event)">
+    <app-tabla *ngIf="componentes.tablaComponent" [componentes]="componentes" (salida)="mostrarActualizar($event)"
+      (actualizarLicenciaturas)="obtenerLicenciaturas()">
     </app-tabla>
   </div>
 </div>

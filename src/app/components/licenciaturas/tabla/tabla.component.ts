@@ -19,26 +19,23 @@ export class TablaComponent implements OnInit {
 
   @Input() componentes;
   @Output() salida = new EventEmitter();
-
+  @Output() actualizarLicenciaturas = new EventEmitter();
   licenciaturas: LicenciaturaModel[];
 
   constructor(private licenciaturaService: LicenciaturaService) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
     this.licenciaturaService.obtenerLicenciatura().then((resp: any) => {
       this.licenciaturas = resp.cont;
     }).catch((err) => {
       console.log(err);
     });
-
   }
 
   actualizar(idLicenciatura: string) {
-    this.salida.emit(idLicenciatura);
     this.componentes.registrarComponent = false;
     this.componentes.actualizarComponent = true;
-
+    this.salida.emit(idLicenciatura);
   }
 
   eliminar(licenciatura: LicenciaturaModel) {
@@ -64,7 +61,5 @@ export class TablaComponent implements OnInit {
       }
     });
   }
-
-
 
 }
