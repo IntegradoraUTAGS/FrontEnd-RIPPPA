@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LicenciaturaService } from 'src/app/services/licenciatura.service';
 import Swal from 'sweetalert2';
 
-
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
@@ -42,7 +41,7 @@ export class LicenciaturasComponent implements OnInit {
     });
   }
 
-  monstrarActualizar(idLicenciatura: string) {
+  mostrarActualizar(idLicenciatura: string) {
     this.idLicenciatura = idLicenciatura;
   }
 

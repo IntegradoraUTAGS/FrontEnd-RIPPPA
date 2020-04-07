@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import Swal from 'sweetalert2';
 import { LicenciaturaModel } from '../../../models/licenciatura';
 import { LicenciaturaService } from '../../../services/licenciatura.service';
@@ -19,25 +19,24 @@ const Toast = Swal.mixin({
 })
 
 export class RegistrarComponent implements OnInit {
-
+  @Input() componentes;
   @Output() salida = new EventEmitter();
+  @Output() actualizarLicenciaturas = new EventEmitter();
 
   licenciatura: LicenciaturaModel = new LicenciaturaModel();
-
   constructor(private licenciaturaService: LicenciaturaService) { }
 
   ngOnInit(): void {
-
   }
 
   registrarLicenciatura(forma: NgForm) {
     this.licenciaturaService.registrarLicenciatura(this.licenciatura).then((resp: any) => {
       Toast.fire(resp.msg, '', 'success');
-      forma.reset();
       this.salida.emit();
+      forma.resetForm();
+      this.actualizarLicenciaturas.emit();
     }).catch((err) => {
       console.log(err);
     })
-
   }
 }
