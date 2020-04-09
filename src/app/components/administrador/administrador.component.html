@@ -14,21 +14,16 @@
                 </select>
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="strNombre" required [(ngModel)]="admin.strNombre"
-                    placeholder="Nombre" #strNombre="ngModel">
+                <input class="form-control" type="text" [(ngModel)]="admin.strNombre" placeholder="Nombre">
             </div>
             <div class="form-group">
-
-                <input class="form-control" type="text" name="numCodigoEmpleado" required
-                    [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado" #numCodigoEmpleado="ngModel">
-
+                <input class="form-control" type="text" [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="strContrasenia" required
-                    [(ngModel)]="admin.strContrasenia" placeholder="Contraseña" #strContrasenia="ngModel">
+                <input class="form-control" type="password" [(ngModel)]="admin.strContrasenia" placeholder="Contraseña">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" placeholder="Comprobar Contraseña">
+                <input class="form-control" type="password"  placeholder="Comprobar Contraseña">
             </div>
             <button class="btn btn-outline-success btn-block" type="submit"
                 [disabled]="!forma.valid">Registrarse</button>
@@ -44,12 +39,11 @@
                 <td>C. Empleado</td>
                 <td>Eliminar</td>
                 <td>Editar</td>
-            </tr>
-            <tr>
-                <td>Comite RIPPPA</td>
-                <td>Natanael Nehemias Acero Valenzuela</td>
-                <td>TICS</td>
-                <td>180223</td>
+            </tr><tr *ngFor="let adm of admin">
+                <td>{{adm.idRol}}</td>
+                <td>{{adm.strNombre}}</td>
+                <td>{{adm.idDireccion}}</td>
+                <td>{{adm.nmbCodigoEmpleado}}</td>
                 <td><button class="btn btn-outline-danger" (click)='eliminarAdmin(admin._id)'>Eliminar</button></td>
                 <td><button class="btn btn-outline-warning" (click)='actualAdmin(admin._id)'>Editar</button></td>
             </tr>

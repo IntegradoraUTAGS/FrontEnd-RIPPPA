@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";;
-import { AdministradorModel } from '../models/administrador';
+import { AdministradorModel } from '../components/models/administrador';
 
 
-@Injectable({ 
+@Injectable({
     providedIn: 'root'
 })
 export class AdministradorService {
@@ -17,13 +17,18 @@ export class AdministradorService {
     mostrarAdmin(){
         return this.http.get(`${this.url}obtener`);
     }
-    registrarAdmin(administrador:AdministradorModel){
-        return this.http.post(`${this.url}registrar`,administrador);
+
+    registrarAdmin(){
+        return this.http.get(`${this.url}registrar`, {
+
+        });
     }
     eliminarAdmin(_id){
         return this.http.delete(`${this.url}eliminar/:${_id}`);
     }
-    actualAdmin( administrador:AdministradorModel, _id:string){
-        return this.http.put(`${this.url}actualizar/:${_id}`,administrador);
+    actualAdmin(_id){
+        return this.http.put(`${this.url}actualizar/:${_id}`, {
+
+        });
     }
 }
