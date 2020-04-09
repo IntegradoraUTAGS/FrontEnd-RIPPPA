@@ -3,8 +3,6 @@ import { LicenciaturaModel } from "../../../models/licenciatura";
 import { LicenciaturaService } from "../../../services/licenciatura.service";
 import Swal from 'sweetalert2';
 
-
-
 const Toast = Swal.mixin({
   toast: true,
   position: 'top-end',
@@ -22,10 +20,8 @@ export class ActualizarComponent implements OnInit {
   @Input() componentes;
   @Input() idLicenciatura;
   @Output() salida = new EventEmitter();
-
-
-
   licenciatura: LicenciaturaModel = new LicenciaturaModel();
+
 
   constructor(private licenciaturaService: LicenciaturaService) { }
 
@@ -41,7 +37,9 @@ export class ActualizarComponent implements OnInit {
     this.licenciaturaService.actualizarLicenciatura(this.idLicenciatura, this.licenciatura).then((resp: any) => {
       console.log(resp);
       Toast.fire("Se ha actualizado correctamente", '', 'success');
+      this.salida.emit();
       this.cancelar();
+      this.ngOnInit();
     }).catch((err: any) => {
       console.log(err);
       Toast.fire("No actualice , no encontre el error", '', 'success');

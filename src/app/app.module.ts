@@ -11,8 +11,6 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from "@angular/common/http";
 import { OtrosConocimientosComponent } from './components/otros-conocimientos/otros-conocimientos.component';
 import { AdministradorModel } from './models/administrador';
-import { AdministradorService } from './services/administrador.service';
-import { DireccionesComponent } from './components/direcciones/direcciones.component';
 import { AcademiaComponent } from './components/academia/academia.component';
 import { AcercaDeNosotrosComponent } from './components/acerca-de-nosotros/acerca-de-nosotros.component';
 import { DireccionesComponent } from './components/direcciones/direcciones.component';
@@ -25,6 +23,9 @@ import { ActualizarComponent } from './components/licenciaturas/actualizar/actua
 import { RegistrarComponent } from './components/licenciaturas/registrar/registrar.component';
 import { TablaComponent } from './components/licenciaturas/tabla/tabla.component';
 import { HerramientasComponent } from './components/herramientas/herramientas.component';
+import { RegistrarAcademiaComponent } from './components/academia/registrar-academia/registrar-academia.component';
+import { ActualizarAcademiaComponent } from './components/academia/actualizar-academia/actualizar-academia.component';
+import { TablaAcademiaComponent } from './components/academia/tabla-academia/tabla-academia.component';
 
 
 
@@ -51,7 +52,10 @@ import { HerramientasComponent } from './components/herramientas/herramientas.co
     ActualizarComponent,
     RegistrarComponent,
     TablaComponent,
-    HerramientasComponent
+    HerramientasComponent,
+    RegistrarAcademiaComponent,
+    ActualizarAcademiaComponent,
+    TablaAcademiaComponent
 
   ],
   imports: [
