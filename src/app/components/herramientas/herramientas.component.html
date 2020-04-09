@@ -1,29 +1,16 @@
 <div class="row">
+    <div class="col-lg-5 col-md-12 mt-4 mb-4">
+        <app-insertar-herramientas *ngIf="componentes.registrarHerramientasComponent" (salida)="obtenerHerramientas()">
+        </app-insertar-herramientas>
 
-    <div class="col-lg-4 col-md-12 mt-4 mb-4">
-        <h2>Agregar Herrameintas</h2>
-        <form class="animated fadeIn fast">
+        <app-actualizar-herramientas *ngIf="componentes.actualizarHerramientasComponent" [componentes]="componentes"
+            [idHerramienta]="idHerramienta"></app-actualizar-herramientas>
 
-            <div class="form-group">
-                <input class="form-control" type="text" id="strNombre" placeholder="Insertar Herrameinta">
-            </div>
-            <button class="btn btn-outline-success btn-block">Agregar</button>
-        </form>
     </div>
 
-    <div class="col-lg-8 col-md-12 mt-4 mb-4">
-        <table id="tab1" class="tablausr table table-bordered table-white">
-            <tr>
-                <td>Nombre</td>
-                <td>Eliminar</td>
-                <td>Editar</td>
-            </tr>
-            <tr>
-
-                <td>NOMBRE</td>
-                <td><button class="btn btn-outline-danger">Eliminar</button></td>
-                <td><button class="btn btn-outline-warning">Editar</button></td>
-            </tr>
-        </table>
+    <div class="col-lg-7 col-md-12 mt-4 mb-4">
+        <app-tabla-herramientas *ngIf="componentes.tablaHerramientasComponent" [componentes]="componentes"
+            (salida)="mostrarActualizar($event)" (actualizarHerramientas)="obtenerHerramientas()">
+        </app-tabla-herramientas>
     </div>
 </div>
