@@ -32,7 +32,7 @@ export class LicenciaturasComponent implements OnInit {
     this.obtenerLicenciaturas();
   }
 
-  obtenerLicenciaturas($event?) {
+  obtenerLicenciaturas() {
     this.licenciaturaService.obtenerLicenciatura().then((licenciaturas: any) => {
       this.licenciaturas = licenciaturas.cont;
     }).catch((err: any) => {

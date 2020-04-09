@@ -8,7 +8,7 @@ const Toast = Swal.mixin({
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000
- });
+});
 
 @Component({
   selector: 'app-maestrias',
@@ -16,9 +16,10 @@ const Toast = Swal.mixin({
   styleUrls: ['./maestrias.component.css']
 })
 export class MaestriasComponent implements OnInit {
-  maestria:MaestriaModel=new MaestriaModel();
 
-  constructor(private maestriaService:MaestriaService) { }
+  maestria: MaestriaModel = new MaestriaModel();
+
+  constructor(private maestriaService: MaestriaService) { }
   ngOnInit() {
     this.obtenerMaestria();
   }
@@ -32,7 +33,7 @@ export class MaestriasComponent implements OnInit {
   }
 
   monstrarActualizar(idMaestria: string) {
-    this.maestria = idMaestria;
+
   }
 
 

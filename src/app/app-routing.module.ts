@@ -18,18 +18,17 @@ import { HerramientaComponent } from "./components/herramientas/herramientas.com
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'Direcciones', component: DireccionesComponent },
-  { path: 'Login', component: LoginComponent },
-  { path: 'Administrador', component: AdministradorComponent },
-  { path: 'Academia', component: AcademiaComponent },
-  { path: 'AcercaDe', component: AcercaDeNosotrosComponent },
-  { path: 'Conocimientos', component: ConocimientosComponent },
-  { path: 'Licenciaturas', component: LicenciaturasComponent },
-  { path: 'Maestrias', component: MaestriasComponent },
-  { path: 'Periodo', component: PeriodoConvocatoriasComponent },
-  { path: 'Profesor', component: ProfesorComponent },
-  { path: 'Herramientas', component: HerramientaComponent }
-
+  { path: 'direcciones', component: DireccionesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'administrador', component: AdministradorComponent },
+  { path: 'academia', component: AcademiaComponent },
+  { path: 'acercaDe', component: AcercaDeNosotrosComponent },
+  { path: 'conocimientos', component: ConocimientosComponent },
+  { path: 'licenciaturas', component: LicenciaturasComponent },
+  { path: 'maestrias', component: MaestriasComponent },
+  { path: 'periodo', component: PeriodoConvocatoriasComponent },
+  { path: 'profesor', component: ProfesorComponent },
+  { path: 'herramientas', component: HerramientaComponent }
 ];
 
 

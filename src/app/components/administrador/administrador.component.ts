@@ -13,31 +13,10 @@ export class AdministradorComponent implements OnInit {
   admin: AdministradorModel = new AdministradorModel();
 
 
-  constructor(private adminService: AdministradorService){
+  constructor(private adminService: AdministradorService) {
   }
   ngOnInit(): void {
-    this.mostrarAdmin();
-  }
-  mostrarAdmin(){
-    this.adminService.mostrarAdmin().subscribe((result: any) => this.admin = result);
-  }
-  registrarAdmin(){
-    this.adminService.registrarAdmin().subscribe((result:any) => this.admin = result);
-  }
-  eliminarAdmin(_id){
-    this.adminService.eliminarAdmin(_id).subscribe((result:any) => this.admin = result);
-  }
-  actualAdmin(_id){
-    this.adminService.actualAdmin(_id).subscribe((result:any)=> this.admin = result);
+
   }
 
-  registrarAdmin(){
-    this.adminService.registrarAdmin(this.admin).subscribe((result:any) => this.admin = result);
-  }
-  eliminarAdmin(_id) {
-    this.adminService.eliminarAdmin(_id).subscribe((result: any) => this.admin = result);
-  }
-  actualAdmin(_id){
-    this.adminService.actualAdmin(this.admin, _id).subscribe((result:any)=> this.admin = result);
-  }
 }
