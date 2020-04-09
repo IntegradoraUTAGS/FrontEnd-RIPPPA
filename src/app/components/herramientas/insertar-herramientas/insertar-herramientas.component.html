@@ -1,0 +1,13 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarHerramienta(forma)" #forma="ngForm">
+
+    <div class="form-group">
+        <h3>Herramientas</h3>
+        <input class="form-control" type="text" placeholder="Herramienta" id="validationServer01" name="strHerramienta"
+            [(ngModel)]="herramienta.strHerramienta" #strHerramienta="ngModel" required>
+
+        <div class=" invalid-feedback ">
+            Favor de ingresar una herramienta.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">AGREGAR</button>
+</form>

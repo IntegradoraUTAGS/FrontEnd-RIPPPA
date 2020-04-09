@@ -20,18 +20,12 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: NgForm) {
     this.service.login(this.administrador).then((administrador: any) => {
-      console.log(administrador.persona);
-      console.warn(administrador.token);
       form.reset();
       localStorage.setItem('token', administrador.token);
-      this.router.navigateByUrl('menu');
+      console.log(administrador.token);
+      this.router.navigateByUrl('');
     }).catch((err: any) => {
       console.log(err);
     });
   }
-
-
-
-
-
 }

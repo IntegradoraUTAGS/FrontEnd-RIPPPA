@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DireccionesService {
-  private url: string = 'localhost:4200/api/direccion' 
+  private url: string = 'localhost:4200/api/direccion'
   constructor(private http: HttpClient) { }
- 
+
 mostrarDirecciones(){
     return this.http.get(`${this.url}obtener`);
 }
@@ -22,7 +22,7 @@ eliminarDirecciones(_id){
 }
 actualDirecciones(_id){
     return this.http.put(`${this.url}actualizar/:${_id}`, {
-        
+
     });
 }
 

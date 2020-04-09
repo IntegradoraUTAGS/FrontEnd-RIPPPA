@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import { HttpClient } from '@angular/common/http';
-import { AdministradorModel } from '../models/administrador';
+import { AdministradorModel } from 'src/app/models/administrador';
 
 
 @Component({
@@ -31,4 +31,13 @@ export class AdministradorComponent implements OnInit {
     this.adminService.actualAdmin(_id).subscribe((result:any)=> this.admin = result);
   }
 
+  registrarAdmin(){
+    this.adminService.registrarAdmin(this.admin).subscribe((result:any) => this.admin = result);
+  }
+  eliminarAdmin(_id) {
+    this.adminService.eliminarAdmin(_id).subscribe((result: any) => this.admin = result);
+  }
+  actualAdmin(_id){
+    this.adminService.actualAdmin(this.admin, _id).subscribe((result:any)=> this.admin = result);
+  }
 }
