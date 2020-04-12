@@ -29,6 +29,7 @@ import { TablaAcademiaComponent } from './components/academia/tabla-academia/tab
 import { ActualizarHerramientasComponent } from './components/herramientas/actualizar-herramientas/actualizar-herramientas.component';
 import { InsertarHerramientasComponent } from './components/herramientas/insertar-herramientas/insertar-herramientas.component';
 import { TablaHerramientasComponent } from './components/herramientas/tabla-herramientas/tabla-herramientas.component';
+import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
 
 
 
@@ -61,7 +62,8 @@ import { TablaHerramientasComponent } from './components/herramientas/tabla-herr
     TablaAcademiaComponent,
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
-    TablaHerramientasComponent
+    TablaHerramientasComponent,
+    ConvocatoriaComponent
 
   ],
   imports: [

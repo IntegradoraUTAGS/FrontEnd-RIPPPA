@@ -13,6 +13,7 @@ import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
 import { ProfesorComponent } from "./components/profesor/profesor.component";
 import { HerramientaComponent } from "./components/herramientas/herramientas.component";
+import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'maestrias', component: MaestriasComponent },
   { path: 'periodo', component: PeriodoConvocatoriasComponent },
   { path: 'profesor', component: ProfesorComponent },
-  { path: 'herramientas', component: HerramientaComponent }
+  { path: 'herramientas', component: HerramientaComponent },
+  { path: 'convocatoria', component: ConvocatoriaComponent }
 ];
 
 
