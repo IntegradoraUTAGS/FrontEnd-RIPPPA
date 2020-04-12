@@ -1,0 +1,22 @@
+
+<div class="row">
+    <div class="col-lg-5 col-md-12 mt-4 mb-4">
+        <h2>CONVOCATORIA</h2>
+        <form class="animated fadeIn fast" (ngSubmit)="registrarConvocatoria()" #forma="ngForm">
+<div class="form-group">
+    <input class="form-control" type="number" placeholder="id Direcion " required [(ngModel)]="convocatoria.idDireccion" #idDireccion="ngModel">
+    <input class="form-control" type="number" placeholder="id Profesor" required  [(ngModel)]="convocatoria.idProfesor" #idProfesor="ngModel">
+    <input class="form-control" type="number" placeholder="id Academia" required [(ngModel)]="convocatoria.idAcademia" #idacademia="ngModel"> 
+    <input class="form-control" type="date" placeholder="Fecha de publicacion " required  [(ngModel)]="convocatoria.DateFecha" #DateFecha="ngModel">
+    <input class="form-control" type="number" placeholder="id del periodo" required [(ngModel)]="convocatoria.idPeriodo" #idPedioro="ngModel"> 
+    <input class="form-control" type="date" placeholder="fecha a cubrir " required  [(ngModel)]="convocatoria.dateFechaDebeCubrirse" #dateFechaDebeCubrirse="ngModel">>
+    <input class="form-control" type="text" placeholder="turno" required [(ngModel)]="convocatoria.strTurno" #strTurno="ngModel">
+    <input class="form-control" type="number" placeholder="numero de horas " required[(ngModel)]="convocatoria.numHoras" #numHoras="ngModel">
+    
+    
+    <button class="btn btn-secondary">agregar convocatoria </button>
+</form>>
+
+</div>
+  
+
