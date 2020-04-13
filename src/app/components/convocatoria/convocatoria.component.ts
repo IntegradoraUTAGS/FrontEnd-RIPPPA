@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { ConvocatoriaModel } from '../../models/convocatoria';
-import { ConvocatoriaService } from '../../services/convocatoria.service';
+import Swal from 'sweetalert2';
+import { ConvocatoriaService } from 'src/app/services/convocatoria.service';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+})
+
 @Component({
   selector: 'app-convocatoria',
   templateUrl: './convocatoria.component.html',
   styleUrls: ['./convocatoria.component.css']
 })
 export class ConvocatoriaComponent implements OnInit {
-
-
   componentes = {
-    actualizarComponent: false,
-    registrarComponent: true,
-    tablaComponent: true,
+    actualizarHerramientasComponent: false,
+    registrarHerramientasComponent: true,
+    tablaHerramientasComponent: true
   };
 
-  Convocatoria: any;
+  convocatoria: any;
   idConvocatoria: string;
 
 
-  constructor(private covocatoriaService: ConvocatoriaService) {
+  constructor(private convocatoriaService: ConvocatoriaService) {
   }
 
   ngOnInit() {
@@ -27,15 +33,18 @@ export class ConvocatoriaComponent implements OnInit {
   }
 
   obtenerConvocatoria($event?) {
-    this.covocatoriaService.obtenerConvocatoria().then((convocatorias: any) => {
-      this.Convocatoria = convocatorias.cont;
+    this.convocatoriaService.obtenerConvocatoria().then((convocatoria: any) => {
+      this.convocatoria = this.convocatoria.convocatoria;
     }).catch((err: any) => {
-      this.Convocatoria = [];
+      Toast.fire(err.error.msg, '', 'warning');
+      this.convocatoria = [];
     });
   }
 
-  monstrarActualizar(idConvocatoria: string) {
+  mostrarActualizar(idConvocatoria: string) {
     this.idConvocatoria = idConvocatoria;
   }
 
 }
+
+

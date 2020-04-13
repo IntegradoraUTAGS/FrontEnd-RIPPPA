@@ -1,13 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ConvocatoriaModel } from 'src/app/models/convocatoria';
 import { ConvocatoriaService } from 'src/app/services/convocatoria.service';
+import Swal from 'sweetalert2';
 
-@Component({
-  selector: 'app-tabla',
-  templateUrl: './tabla.component.html',
-  styleUrls: ['./tabla.component.css']
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
 })
-export class TablaComponent implements OnInit {
+@Component({
+  selector: 'app-tabla-convocatoria',
+  templateUrl: './tabla-convocatoria.component.html',
+  styleUrls: ['./tabla-convocatoria.component.css']
+})
+export class TablaConvocatoriaComponent implements OnInit {
 
   @Input() componentes;
   @Output() salida = new EventEmitter();
@@ -28,14 +35,14 @@ export class TablaComponent implements OnInit {
 
   actualizar(idCovocatoria: string) {
     this.salida.emit(idCovocatoria);
-    this.componentes.registrarComponent = false;
-    this.componentes.actualizarComponent = true;
+    this.componentes.ConvocatoriaregistrarComponent = false;
+    this.componentes.ConvocatoriaactualizarComponent = true;
 
   }
 
   eliminar(convocatoria: ConvocatoriaModel) {
     Swal.fire({
-      title: `¿Estás seguro qué deseas eliminar esta licenciatua : ${convocatoria.idconvocatoria}?`,
+      title: `¿Estás seguro qué deseas eliminar esta Convocatoria : ${convocatoria.idconvocatoria}?`,
       text: 'No se pueden revertir los cambios',
       icon: 'warning',
       showCancelButton: true,
@@ -47,8 +54,8 @@ export class TablaComponent implements OnInit {
       if (result.value) {
         this.convocatoriaService.eliminarConvocatoria(convocatoria.idconvocatoria).then((convocatoria: any) => {
           Toast.fire(convocatoria.msg, '', 'success');
-          this.componentes.registrarComponent = true;
-          this.componentes.actualizarComponent = false;
+          this.componentes.ConvocatoriaregistrarComponent = true;
+          this.componentes.ConvocatoriaactualizarComponent = false;
           this.ngOnInit();
         }).catch((err: any) => {
           Toast.fire(err.error.msg, '', 'error');
@@ -56,3 +63,5 @@ export class TablaComponent implements OnInit {
       }
     });
   }
+
+}
