@@ -22,7 +22,7 @@ export class ConvocatoriaService {
         return this.http.post(`${this.url}/registrar`, convocatoria).toPromise();
     }
 
-    actualizarConvocatoria(idCovocatoria: String, maestria: ConvocatoriaModel) {
+    actualizarConvocatoria(idCovocatoria: String, convocatoria: ConvocatoriaModel) {
         return this.http.put(`${this.url}/actualizar/${idCovocatoria}`, idCovocatoria).toPromise();
     }
 
