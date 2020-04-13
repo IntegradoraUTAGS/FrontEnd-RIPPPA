@@ -29,7 +29,6 @@ import { TablaAcademiaComponent } from './components/academia/tabla-academia/tab
 import { ActualizarHerramientasComponent } from './components/herramientas/actualizar-herramientas/actualizar-herramientas.component';
 import { InsertarHerramientasComponent } from './components/herramientas/insertar-herramientas/insertar-herramientas.component';
 import { TablaHerramientasComponent } from './components/herramientas/tabla-herramientas/tabla-herramientas.component';
-import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
@@ -64,7 +63,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
-    ConvocatoriaComponent
 
   ],
   imports: [
