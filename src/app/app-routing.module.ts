@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { InicioComponent } from "./components/inicio/inicio.component";
@@ -14,7 +14,7 @@ import { PeriodoConvocatoriasComponent } from './components/periodo-convocatoria
 import { ProfesorComponent } from "./components/profesor/profesor.component";
 import { HerramientaComponent } from "./components/herramientas/herramientas.component";
 import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
-
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 
 
 const routes: Routes = [
@@ -25,11 +25,11 @@ const routes: Routes = [
   { path: 'academia', component: AcademiaComponent },
   { path: 'acercaDe', component: AcercaDeNosotrosComponent },
   { path: 'conocimientos', component: ConocimientosComponent },
-  { path: 'licenciaturas', component: LicenciaturasComponent },
+  { path: 'licenciaturas', component: LicenciaturasComponent, canActivate: [AuthGuard] },
   { path: 'maestrias', component: MaestriasComponent },
   { path: 'periodo', component: PeriodoConvocatoriasComponent },
   { path: 'profesor', component: ProfesorComponent },
-  { path: 'herramientas', component: HerramientaComponent },
+  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] },
   { path: 'convocatoria', component: ConvocatoriaComponent }
 ];
 
