@@ -63,7 +63,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
-
   ],
   imports: [
 
