@@ -30,8 +30,9 @@ import { ActualizarHerramientasComponent } from './components/herramientas/actua
 import { InsertarHerramientasComponent } from './components/herramientas/insertar-herramientas/insertar-herramientas.component';
 import { TablaHerramientasComponent } from './components/herramientas/tabla-herramientas/tabla-herramientas.component';
 import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
-
-
+import { AuthService } from './auth/auth.service';
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -67,12 +68,14 @@ import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.co
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],
-  providers: [AdministradorModel],
+  providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService, AdministradorModel, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
