@@ -21,7 +21,7 @@ const Toast = Swal.mixin({
 export class RegistrarComponent implements OnInit {
   @Input() componentes;
   @Output() actualizarTabla = new EventEmitter()
-
+  @Input() idLicenciatura;
   licenciatura: LicenciaturaModel = new LicenciaturaModel();
   constructor(private licenciaturaService: LicenciaturaService) { }
 

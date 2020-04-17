@@ -19,8 +19,9 @@ const Toast = Swal.mixin({
 export class InsertarHerramientasComponent implements OnInit {
 
   @Input() componentes;
+  @Input() idHerramienta;
   @Output() salida = new EventEmitter();
-  @Output() actualizarHerramientas = new EventEmitter();
+  @Output() actualizarTablaH = new EventEmitter();
 
   herramienta: HerramientaModel = new HerramientaModel();
   constructor(private herramientaService: HerramientaService) { }
@@ -31,9 +32,8 @@ export class InsertarHerramientasComponent implements OnInit {
   registrarHerramienta(forma: NgForm) {
     this.herramientaService.registrarHerramienta(this.herramienta).then((resp: any) => {
       Toast.fire(resp.msg, '', 'success');
-      this.salida.emit();
       forma.resetForm();
-      this.actualizarHerramientas.emit();
+      this.actualizarTablaH.emit();
     }).catch((err) => {
       console.log(err);
     })
