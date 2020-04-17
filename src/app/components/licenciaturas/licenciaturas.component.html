@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-lg-5 col-md-12 mt-4 mb-4">
-    <app-registrar *ngIf="componentes.registrarComponent" (actualizarTabla)="obtenerLicenciaturas()"></app-registrar>
+    <app-registrar *ngIf="componentes.registrarComponent" (actualizarTabla)="obtenerLicenciaturas()"
+      [idLicenciatura]="idLicenciatura"></app-registrar>
 
     <app-actualizar *ngIf="componentes.actualizarComponent" [componentes]="componentes"
       [idLicenciatura]="idLicenciatura" (actualizarTabla)="obtenerLicenciaturas()"></app-actualizar>

@@ -20,7 +20,7 @@ export class TablaHerramientasComponent implements OnInit {
   @Input() componentes;
   @Output() salida = new EventEmitter();
   @Output() actualizarLicenciaturas = new EventEmitter();
-  herramientas: HerramientaModel[];
+  @Input() herramientas: HerramientaModel[];
 
   constructor(private herramientaService: HerramientaService) { }
 

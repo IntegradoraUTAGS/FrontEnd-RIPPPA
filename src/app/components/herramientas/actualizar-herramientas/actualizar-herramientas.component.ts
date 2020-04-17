@@ -20,6 +20,7 @@ export class ActualizarHerramientasComponent implements OnInit {
   @Input() componentes;
   @Input() idHerramienta;
   @Output() salida = new EventEmitter();
+  @Output() actualizarTablaH = new EventEmitter()
   herramienta: HerramientaModel = new HerramientaModel();
 
 
@@ -37,9 +38,8 @@ export class ActualizarHerramientasComponent implements OnInit {
     this.herramientaService.actualizarHerramienta(this.idHerramienta, this.herramienta).then((resp: any) => {
       console.log(resp);
       Toast.fire("Se ha actualizado correctamente", '', 'success');
-      this.salida.emit();
       this.cancelar();
-      this.ngOnInit();
+      this.actualizarTablaH.emit();
     }).catch((err: any) => {
       console.log(err);
       Toast.fire("No actualice , no encontre el error", '', 'success');
