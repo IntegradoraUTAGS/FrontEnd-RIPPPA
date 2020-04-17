@@ -27,6 +27,7 @@ export class AdministradorComponent implements OnInit {
   constructor(private adminService: AdministradorService) {
   }
   ngOnInit(): void {
+
     this.adminService.mostrarAdmin().then((resp: any) => {
       this.administradores = resp.cont;
     }).catch((err) => {
@@ -43,8 +44,7 @@ export class AdministradorComponent implements OnInit {
   }
   eliminarAdmin(_id) {
     this.adminService.eliminarAdmin(_id).subscribe((result: any) => this.admin = result);
+
   }
-  actualAdmin(_id){
-    this.adminService.actualAdmin(this.admin, _id).subscribe((result:any)=> this.admin = result);
-  }
+
 }

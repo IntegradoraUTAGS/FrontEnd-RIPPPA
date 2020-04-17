@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { InicioComponent } from "./components/inicio/inicio.component";
@@ -12,24 +12,24 @@ import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
 import { ProfesorComponent } from "./components/profesor/profesor.component";
-import { HerramientasComponent } from "./components/herramientas/herramientas.component";
-
+import { HerramientaComponent } from "./components/herramientas/herramientas.component";
+import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path :'Direcciones', component:DireccionesComponent},
-  { path: 'Login', component: LoginComponent },
-  { path: 'administrador', component: AdministradorComponent },
-  { path: 'Academia', component: AcademiaComponent },
-  { path: 'AcercaDe', component: AcercaDeNosotrosComponent },
-  { path: 'Conocimientos', component: ConocimientosComponent },
-  { path: 'Licenciaturas', component: LicenciaturasComponent },
-  { path: 'Maestrias', component: MaestriasComponent },
-  { path: 'Periodo', component: PeriodoConvocatoriasComponent },
-  { path: 'Profesor', component: ProfesorComponent },
-  { path: 'Herramientas', component: HerramientasComponent }
 
+  { path: 'direcciones', component: DireccionesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'administrador', component: AdministradorComponent },
+  { path: 'academia', component: AcademiaComponent },
+  { path: 'acercaDe', component: AcercaDeNosotrosComponent },
+  { path: 'conocimientos', component: ConocimientosComponent },
+  { path: 'licenciaturas', component: LicenciaturasComponent, canActivate: [AuthGuard] },
+  { path: 'maestrias', component: MaestriasComponent },
+  { path: 'periodo', component: PeriodoConvocatoriasComponent },
+  { path: 'profesor', component: ProfesorComponent },
+  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] }
 ];
 
 

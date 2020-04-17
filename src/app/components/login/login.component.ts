@@ -3,6 +3,14 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AdministradorModel } from '../../models/administrador';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
 
 @Component({
   selector: 'app-login',
@@ -26,6 +34,12 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('');
     }).catch((err: any) => {
       console.log(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Código de empleado o Contraseña incorrectos',
+      })
+      form.resetForm();
     });
   }
 }

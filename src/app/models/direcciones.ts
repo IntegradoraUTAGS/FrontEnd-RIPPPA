@@ -1,5 +1,5 @@
 export class DireccionesModel {
-    _id?:string;
+    _id?: string;
     strNombre: string;
-    blnEstado: boolean;
+    blnEstado?: boolean;
 }

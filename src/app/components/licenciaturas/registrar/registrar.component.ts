@@ -20,9 +20,8 @@ const Toast = Swal.mixin({
 
 export class RegistrarComponent implements OnInit {
   @Input() componentes;
-  @Output() salida = new EventEmitter();
-  @Output() actualizarLicenciaturas = new EventEmitter();
-
+  @Output() actualizarTabla = new EventEmitter()
+  @Input() idLicenciatura;
   licenciatura: LicenciaturaModel = new LicenciaturaModel();
   constructor(private licenciaturaService: LicenciaturaService) { }
 
@@ -32,9 +31,8 @@ export class RegistrarComponent implements OnInit {
   registrarLicenciatura(forma: NgForm) {
     this.licenciaturaService.registrarLicenciatura(this.licenciatura).then((resp: any) => {
       Toast.fire(resp.msg, '', 'success');
-      this.salida.emit();
       forma.resetForm();
-      this.actualizarLicenciaturas.emit();
+      this.actualizarTabla.emit();
     }).catch((err) => {
       console.log(err);
     })

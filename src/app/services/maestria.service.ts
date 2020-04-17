@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { MaestriaModel } from '../models/maestria';
 import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 
-
 export class MaestriaService {
+
 constructor(private http: HttpClient) { }
   url = `http://localhost:3000/maestria`;
 
@@ -33,4 +34,3 @@ eliminarMaestria(idMaestria: String) {
 }
 
 
- 

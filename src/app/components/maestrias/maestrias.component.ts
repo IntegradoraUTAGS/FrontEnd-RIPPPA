@@ -8,7 +8,9 @@ const Toast = Swal.mixin({
   position: 'top-end',
   showConfirmButton: false,
   timer: 3000
+
  });
+
 
 @Component({
   selector: 'app-maestrias',
@@ -42,4 +44,5 @@ export class MaestriasComponent implements OnInit {
     this.maestriaService.actualizarMaestria(this.maestria, _id).subscribe((result: any) => this.maestria = result);
   }
   
+
 }
