@@ -1,0 +1,32 @@
+.titulo{
+    font-size: 30px;
+    position: relative;
+    top: 110px;
+    left: 288px;
+  }
+  .tbl{
+    position: relative;
+    top: 70px;
+    width: 745px;
+    height: 100px;
+    left: 300px;
+    text-align: center;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break:break-all;
+    
+  }
+  .boton{
+    position: relative;
+    left: 960px;
+    top: 58px;
+  }
+  .int{
+    position: relative;
+    top: 120px;
+    left: 290px;
+  }
+  .pos{
+      position: center;
+  }
+  

@@ -9,27 +9,26 @@ import { environment } from "../../environments/environment.prod";
 })
 export class AdministradorService {
 
-    private url: string = `${environment.urlProd}administrador/`
+
+    private url: string = 'http://localhost:3000/api/administrador'
+
     constructor(private http: HttpClient) { }
 
     login(administrador: AdministradorModel) {
         return this.http.post(this.url + 'login', administrador).toPromise();
     }
-    mostrarAdmin() {
-        return this.http.get(`${this.url}obtener`);
-    }
 
-    registrarAdmin() {
-        return this.http.get(`${this.url}registrar`, {
-
-        });
+    mostrarAdmin(){
+        return this.http.get(`${this.url}/obtener`).toPromise();
     }
-    eliminarAdmin(_id) {
-        return this.http.delete(`${this.url}eliminar/:${_id}`);
+    registrarAdmin(administrador:AdministradorModel){
+        return this.http.post(`${this.url}/registrar`, administrador).toPromise();
     }
-    actualAdmin(_id) {
-        return this.http.put(`${this.url}actualizar/:${_id}`, {
+    eliminarAdmin(_id){
+        return this.http.delete(`${this.url}/eliminar/:${_id}`);
+    }
+    actualAdmin(administrador:AdministradorModel, _id:string){
+        return this.http.put(`${this.url}actualizar/:${_id}`,administrador);
 
-        });
     }
 }
