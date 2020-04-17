@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";;
 import { AdministradorModel } from '../models/administrador';
+import { environment } from "../../environments/environment.prod";
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { AdministradorModel } from '../models/administrador';
 })
 export class AdministradorService {
 
-    private url: string = 'http://localhost:3000/api/administrador/'
+    private url: string = `${environment.urlProd}administrador/`
     constructor(private http: HttpClient) { }
 
     login(administrador: AdministradorModel) {

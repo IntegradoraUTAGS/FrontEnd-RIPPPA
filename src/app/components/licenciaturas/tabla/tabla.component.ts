@@ -20,7 +20,7 @@ export class TablaComponent implements OnInit {
   @Input() componentes;
   @Output() salida = new EventEmitter();
   @Output() actualizarLicenciaturas = new EventEmitter();
-  licenciaturas: LicenciaturaModel[];
+  @Input() licenciaturas: LicenciaturaModel[];
 
   constructor(private licenciaturaService: LicenciaturaService) { }
 

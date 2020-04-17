@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LicenciaturaModel } from '../models/licenciatura';
+import { environment } from "../../environments/environment.prod";
 
 @Injectable({
     providedIn: 'root'
 })
 export class LicenciaturaService {
 
-    url = `http://localhost:3000/api/licenciatura`;
+    url = `${environment.urlProd}licenciatura`;
 
     constructor(private http: HttpClient) { }
 

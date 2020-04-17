@@ -65,7 +65,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     TablaHerramientasComponent,
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

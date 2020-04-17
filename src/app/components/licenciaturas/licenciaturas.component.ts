@@ -38,6 +38,8 @@ export class LicenciaturasComponent implements OnInit {
 
   obtenerLicenciaturas() {
     this.licenciaturaService.obtenerLicenciatura().then((licenciaturas: any) => {
+      console.log(licenciaturas);
+
       this.licenciaturas = licenciaturas.cont;
     }).catch((err: any) => {
       Toast.fire(err.error.msg, '', 'warning');
