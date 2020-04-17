@@ -1,1 +1,31 @@
-<p>conocimientos works!</p>
+<label class="titulo">Conocimientos</label><br>
+<div class="int form-row for col-md-6">
+    <form class="animated fadeIn fast" (ngSubmit)="registrar()" #forma="ngForm">
+        <input type="text" class="form-control" name="conocimientos" [(ngModel)]="conocimientos.strConocimientos"
+            #strConocimientos="ngModel"><br>
+        <button type="submit" class="btn btn-outline-info boton" name="agregarc">Agregar</button>
+    </form>
+</div>
+
+
+    <body>
+        <table class="table-bordered tbl">
+            <thead>
+                <tr color="#EAEAEA">
+                    <th width="500" height="40">Conocimientos</th>
+                    <th scope="col" height="40">Actualizar</th>
+                    <th scope="col" height="40">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let con of conocimientos">
+                    <td>{{con.strConocimientos}}</td>
+                    <td scope="row"><button type="button" class="btn btn-outline-success"
+                            (click)="actualizar(con._id)">Actualizar</button></td>
+                    <td scope="row"><button type="submit" class="btn btn-outline-danger"
+                            (click)="eliminar(con._id)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    

@@ -20,15 +20,15 @@ obtenerMaestriaid(idMaestria: String) {
 }
 
 registrarMaestria(maestria: MaestriaModel) {
-    return this.http.post(`${this.url}/registrar`, maestria).toPromise();
+    return this.http.post(`${this.url}/registrar`, maestria)
 }
 
-actualizarLMaestria(idMaestria: String, maestria: MaestriaModel) {
-    return this.http.put(`${this.url}/actualizar/${idMaestria}`, maestria).toPromise();
+actualizarMaestria(maestria: MaestriaModel ,idMaestria: String) {
+    return this.http.put(`${this.url}/actualizar/${idMaestria}`, maestria)
 }
 
 eliminarMaestria(idMaestria: String) {
-    return this.http.delete(`${this.url}/eliminar/${idMaestria}`).toPromise();
+    return this.http.delete(`${this.url}/eliminar/${idMaestria}`)
 }
 }
 

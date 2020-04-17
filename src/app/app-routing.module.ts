@@ -7,7 +7,7 @@ import { OtrosConocimientosComponent } from './components/otros-conocimientos/ot
 import { DireccionesComponent } from './components/direcciones/direcciones.component';
 import { AcademiaComponent } from "./components/academia/academia.component";
 import { AcercaDeNosotrosComponent } from "./components/acerca-de-nosotros/acerca-de-nosotros.component";
-import { ConocimientosComponent } from './components/conocimientos/conocimientos.component';
+import { ConocimientosComponent } from "./components/conocimientos/conocimientos.component";
 import { LicenciaturasComponent } from './components/licenciaturas/licenciaturas.component';
 import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: '', component: InicioComponent },
   { path :'Direcciones', component:DireccionesComponent},
   { path: 'Login', component: LoginComponent },
-  { path: 'Administrador', component: AdministradorComponent },
+  { path: 'administrador', component: AdministradorComponent },
   { path: 'Academia', component: AcademiaComponent },
   { path: 'AcercaDe', component: AcercaDeNosotrosComponent },
   { path: 'Conocimientos', component: ConocimientosComponent },

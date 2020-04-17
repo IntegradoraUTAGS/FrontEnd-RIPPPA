@@ -2,29 +2,30 @@
 
     <div class=" col-md-12 mt-4 mb-4">
         <h2>Administradores</h2>
-        <form class="animated fadeIn fast" (ngSubmit)="registrarAdmin()" #forma="ngForm">
+        <form class="animated fadeIn fast" (ngSubmit)="registrarAdmin(forma)" #forma="ngForm">
             <div class="form-group">
-                <select class="form-control">
-                    <option value="">TICS</option>
+                <select class="form-control" >
+                    <option selected="" hidden="" [ngValue]="undefined">Selecciona una Opcion</option>
+                    <option value="TICS" name="idDireccion" [(ngModel)]="admin.idDireccion" #idDireccion="ngModel">TICS</option>
                 </select>
             </div>
             <div class="form-group">
                 <select class="form-control">
-                    <option value="">Comite RIPPPA</option>
+                    <option value="TICS" name="idRol" [(ngModel)]="admin.idRol" #idRol="ngModel">Comite RIPPPA</option>
                 </select>
             </div>
             <div class="form-group">
-                <input class="form-control" type="text" name="strNombre" required [(ngModel)]="admin.strNombre"
+                <input class="form-control" type="text" name="Nombre" required [(ngModel)]="admin.strNombre"
                     placeholder="Nombre" #strNombre="ngModel">
             </div>
             <div class="form-group">
 
-                <input class="form-control" type="text" name="numCodigoEmpleado" required
+                <input class="form-control" type="text" name="CodigoEmpleado" required
                     [(ngModel)]="admin.numCodigoEmpleado" placeholder="Código de Empleado" #numCodigoEmpleado="ngModel">
 
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="strContrasenia" required
+                <input class="form-control" type="password" name="Contrasenia" required
                     [(ngModel)]="admin.strContrasenia" placeholder="Contraseña" #strContrasenia="ngModel">
             </div>
             <div class="form-group">
@@ -45,13 +46,13 @@
                 <td>Eliminar</td>
                 <td>Editar</td>
             </tr>
-            <tr>
-                <td>Comite RIPPPA</td>
-                <td>Natanael Nehemias Acero Valenzuela</td>
-                <td>TICS</td>
-                <td>180223</td>
-                <td><button class="btn btn-outline-danger" (click)='eliminarAdmin(admin._id)'>Eliminar</button></td>
-                <td><button class="btn btn-outline-warning" (click)='actualAdmin(admin._id)'>Editar</button></td>
+            <tr *ngFor="let adm of administradores">
+                <td>{{adm.idRol}}</td>
+                <td>{{adm.strNombre}}</td>
+                <td>{{adm.idDireccion}}</td>
+                <td>{{adm.numCodigoEmpleado}}</td>
+                <td><button class="btn btn-outline-danger" (click)='eliminarAdmin(adm._id)'>Eliminar</button></td>
+                <td><button class="btn btn-outline-warning" (click)='actualAdmin(adm._id)'>Editar</button></td>
             </tr>
         </table>
     </div>

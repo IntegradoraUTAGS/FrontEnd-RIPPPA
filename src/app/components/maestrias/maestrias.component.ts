@@ -31,9 +31,15 @@ export class MaestriasComponent implements OnInit {
     });
   }
 
-  monstrarActualizar(idMaestria: string) {
-    this.maestria = idMaestria;
+  registrarMaestria(){
+    this.maestriaService.registrarMaestria(this.maestria).subscribe((result:any) => this.maestria = result);
+  }
+  eliminarMaest(_id) {
+    this.maestriaService.eliminarMaestria(_id).subscribe((result: any) => this.maestria = result);
   }
 
-
+  actualMaest(_id) {
+    this.maestriaService.actualizarMaestria(this.maestria, _id).subscribe((result: any) => this.maestria = result);
+  }
+  
 }

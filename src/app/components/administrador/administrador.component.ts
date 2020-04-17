@@ -1,7 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AdministradorService } from 'src/app/services/administrador.service';
-import { HttpClient } from '@angular/common/http';
 import { AdministradorModel } from 'src/app/models/administrador';
+import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
+
 
 
 @Component({
@@ -11,19 +21,26 @@ import { AdministradorModel } from 'src/app/models/administrador';
 })
 export class AdministradorComponent implements OnInit {
   admin: AdministradorModel = new AdministradorModel();
+  administradores: AdministradorModel[];
 
 
   constructor(private adminService: AdministradorService) {
   }
   ngOnInit(): void {
-    this.mostrarAdmin();
-  }
-  mostrarAdmin() {
-    this.adminService.mostrarAdmin().subscribe((result: any) => this.admin = result);
+    this.adminService.mostrarAdmin().then((resp: any) => {
+      this.administradores = resp.cont;
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
-  registrarAdmin(){
-    this.adminService.registrarAdmin(this.admin).subscribe((result:any) => this.admin = result);
+  registrarAdmin(forma: NgForm) {
+    this.adminService.registrarAdmin(this.admin).then((resp: any) => {
+      Toast.fire(resp.msg, '', 'success');
+      forma.resetForm();
+    }).catch((err) => {
+      console.log(err);
+    })
   }
   eliminarAdmin(_id) {
     this.adminService.eliminarAdmin(_id).subscribe((result: any) => this.admin = result);

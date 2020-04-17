@@ -2,11 +2,12 @@
 <div class="row">
     <div class="col-lg-5 col-md-12 mt-4 mb-4">
         <h2>Maestrias</h2>
-        <form class="animated fadeIn fast" (ngSubmit)="registrarMaestria()" #forma="ngForm"></form>>
+        <form class="animated fadeIn fast" (ngSubmit)="registrarMaestria()" #forma="ngForm">
 <div class="form-group">
     <input class="form-control" type="text" placeholder="Nombre de Maestria" required [(ngModel)]="maestria.strMaestria" #strMaestria="ngModel">
-    <button class="btn btn-secondary">Registrar</button>
+    <button type="submit" class="btn btn-secondary">Registrar</button>
 </div>
+</form>
   <table class="table">
     <thead class="thead-light">
       <tr>
@@ -21,13 +22,11 @@
         <td><button class="btn btn-outline-danger">Eliminar</button></td>
         <td><button class="btn btn-outline-warning">Editar</button></td>
       </tr>
-      <tr *ngFor="let adm of admin">
-        <td>{{adm.idRol}}</td>
-        <td>{{adm.strNombre}}</td>
-        <td>{{adm.idDireccion}}</td>
-        <td>{{adm.nmbCodigoEmpleado}}</td>
-        <td><button class="btn btn-outline-danger" (click)='eliminarAdmin(admin._id)'>Eliminar</button></td>
-        <td><button class="btn btn-outline-warning" (click)='actualAdmin(admin._id)'>Editar</button></td>
+      <tr *ngFor="let ms of maestria">
+        <td>{{ms._id}}</td>
+        <td>{{ms.strMaestria}}</td>
+        <td><button class="btn btn-outline-danger" (click)='eliminarMaest(ms._id)'>Eliminar</button></td>
+        <td><button class="btn btn-outline-warning" (click)='actualMaest(ms._id)'>Editar</button></td>
     </tr>
     </tbody>
   </table>

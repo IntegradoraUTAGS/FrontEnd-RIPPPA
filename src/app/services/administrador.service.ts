@@ -8,22 +8,22 @@ import { AdministradorModel } from '../models/administrador';
 })
 export class AdministradorService {
 
-    private url: string = 'http://localhost:3000/api/administrador/'
+    private url: string = 'http://localhost:3000/api/administrador'
     constructor(private http: HttpClient) { }
 
     login(administrador: AdministradorModel) {
         return this.http.post(this.url + 'login', administrador).toPromise();
     }
     mostrarAdmin(){
-        return this.http.get(`${this.url}obtener`);
+        return this.http.get(`${this.url}/obtener`).toPromise();
     }
     registrarAdmin(administrador:AdministradorModel){
-        return this.http.post(`${this.url}registrar`,administrador);
+        return this.http.post(`${this.url}registrar`, administrador).toPromise();
     }
     eliminarAdmin(_id){
         return this.http.delete(`${this.url}eliminar/:${_id}`);
     }
-    actualAdmin( administrador:AdministradorModel, _id:string){
+    actualAdmin(administrador:AdministradorModel, _id:string){
         return this.http.put(`${this.url}actualizar/:${_id}`,administrador);
     }
 }
