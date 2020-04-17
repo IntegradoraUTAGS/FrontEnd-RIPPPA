@@ -6,12 +6,12 @@
             <div class="form-group">
                 <select class="form-control" >
                     <option selected="" hidden="" [ngValue]="undefined">Selecciona una Opcion</option>
-                    <option value="TICS" name="idDireccion" [(ngModel)]="admin.idDireccion" #idDireccion="ngModel">TICS</option>
+                    <option value="TICS" name="idDireccion" [(ngModel)]="admin.idDireccion" #idDireccion="ngModel" ngDefaultControl>TICS</option>
                 </select>
             </div>
             <div class="form-group">
                 <select class="form-control">
-                    <option value="TICS" name="idRol" [(ngModel)]="admin.idRol" #idRol="ngModel">Comite RIPPPA</option>
+                    <option value="TICS" name="idRol" [(ngModel)]="admin.idRol" #idRol="ngModel" ngDefaultControl>Comite RIPPPA</option>
                 </select>
             </div>
             <div class="form-group">

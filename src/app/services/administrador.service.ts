@@ -18,10 +18,10 @@ export class AdministradorService {
         return this.http.get(`${this.url}/obtener`).toPromise();
     }
     registrarAdmin(administrador:AdministradorModel){
-        return this.http.post(`${this.url}registrar`, administrador).toPromise();
+        return this.http.post(`${this.url}/registrar`, administrador).toPromise();
     }
     eliminarAdmin(_id){
-        return this.http.delete(`${this.url}eliminar/:${_id}`);
+        return this.http.delete(`${this.url}/eliminar/:${_id}`);
     }
     actualAdmin(administrador:AdministradorModel, _id:string){
         return this.http.put(`${this.url}actualizar/:${_id}`,administrador);

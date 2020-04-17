@@ -33,7 +33,6 @@ export class AdministradorComponent implements OnInit {
       console.log(err);
     });
   }
-
   registrarAdmin(forma: NgForm) {
     this.adminService.registrarAdmin(this.admin).then((resp: any) => {
       Toast.fire(resp.msg, '', 'success');
