@@ -32,6 +32,10 @@ import { TablaHerramientasComponent } from './components/herramientas/tabla-herr
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
+import { RegistrarCovocatoriaComponent } from './components/convocatoria/registrar-covocatoria/registrar-covocatoria.component';
+import { ActualizarConvocatoriaComponent } from './components/convocatoria/actualizar-convocatoria/actualizar-convocatoria.component';
+import { TablaConvocatoriaComponent } from './components/convocatoria/tabla-convocatoria/tabla-convocatoria.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,10 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
+    ConvocatoriaComponent,
+    RegistrarCovocatoriaComponent,
+    ActualizarConvocatoriaComponent,
+    TablaConvocatoriaComponent,
   ],
   imports: [
 
