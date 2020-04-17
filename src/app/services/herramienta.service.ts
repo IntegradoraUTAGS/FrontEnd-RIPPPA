@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HerramientaModel } from '../models/herramienta';
+import { environment } from "../../environments/environment.prod";
 
 @Injectable({
     providedIn: 'root'
 })
 export class HerramientaService {
 
-    url = `http://localhost:3000/api/herramienta`;
+    url = `${environment.urlProd}herramienta`;
 
     constructor(private http: HttpClient) { }
 

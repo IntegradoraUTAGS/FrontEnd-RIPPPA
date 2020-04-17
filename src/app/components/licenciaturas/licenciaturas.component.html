@@ -8,7 +8,8 @@
   </div>
 
   <div class="col-lg-7 col-md-12 mt-4 mb-4">
-    <app-tabla *ngIf="componentes.tablaComponent" [componentes]="componentes" (salida)="mostrarActualizar($event)">
+    <app-tabla *ngIf="componentes.tablaComponent" [componentes]="componentes" (salida)="mostrarActualizar($event)"
+      [licenciaturas]="licenciaturas">
     </app-tabla>
   </div>
 </div>

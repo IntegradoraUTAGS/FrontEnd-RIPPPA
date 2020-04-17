@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ConvocatoriaModel } from '../models/convocatoria';
-
+import { environment } from "../../environments/environment.prod";
 @Injectable({
     providedIn: 'root'
 })
 export class ConvocatoriaService {
-    url = `http://localhost:3000/convocatoria`;
+    url = `${environment.urlProd}convocatoria/`;
     constructor(private http: HttpClient) { }
 
 
