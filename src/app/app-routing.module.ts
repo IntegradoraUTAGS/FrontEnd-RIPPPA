@@ -13,6 +13,7 @@ import { MaestriasComponent } from './components/maestrias/maestrias.component';
 import { PeriodoConvocatoriasComponent } from './components/periodo-convocatorias/periodo-convocatorias.component';
 import { ProfesorComponent } from "./components/profesor/profesor.component";
 import { HerramientaComponent } from "./components/herramientas/herramientas.component";
+import { AdminComponent } from "./components/admin/admin.component";
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'maestrias', component: MaestriasComponent },
   { path: 'periodo', component: PeriodoConvocatoriasComponent },
   { path: 'profesor', component: ProfesorComponent },
-  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] }
+  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
 ];
 
 

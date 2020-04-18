@@ -32,6 +32,7 @@ import { TablaHerramientasComponent } from './components/herramientas/tabla-herr
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
