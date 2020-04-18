@@ -9,18 +9,28 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item" routerLinkActive="active">
+            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == false">
                 <a class="nav-link" [routerLink]="''">Inicio</a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
+            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == false">
                 <a class="nav-link">Convocatoria RIPPPA</a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
+            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == false">
                 <a class="nav-link" [routerLink]="'acercaDe'">Acerca de nosotros</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == true">
+                <a class="nav-link" [routerLink]="'licenciaturas'">Licenciaturas</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == true">
+                <a class="nav-link" [routerLink]="'herramientas'">Herramientas</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-light my-2 my-sm-0" [routerLink]="'login'" type="submit">Iniciar
+            <button class="btn btn-outline-light my-2 my-sm-0" *ngIf="checkStatus == false" [routerLink]="'login'"
+                type="submit">Iniciar
+                sesión</button>
+            <button *ngIf="checkStatus == true" class="btn btn-outline-light my-2 my-sm-0"
+                (click)="cerrarSesion()">Cerrar
                 sesión</button>
         </form>
     </div>

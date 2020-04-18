@@ -10,7 +10,7 @@ import { environment } from "../../environments/environment.prod";
 export class AdministradorService {
 
 
-    private url: string = `${environment.urlProd}administrador`;
+    private url: string = `${environment.urlProd}administrador/`;
 
     constructor(private http: HttpClient) { }
 
