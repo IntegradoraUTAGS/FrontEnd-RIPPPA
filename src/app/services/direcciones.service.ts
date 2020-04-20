@@ -6,7 +6,7 @@ import { environment } from "../../environments/environment.prod";
   providedIn: 'root'
 })
 export class DireccionesService {
-  url = `${environment.urlLocal}direccion`;
+  url = `${environment.urlProd}direccion`;
 
   constructor(private http: HttpClient) { }
 

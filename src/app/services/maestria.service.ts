@@ -8,7 +8,7 @@ import { environment } from "../../environments/environment.prod";
 })
 export class MaestriaService {
 
-    url = `${environment.urlLocal}maestria`;
+    url = `${environment.urlProd}maestria`;
 
     constructor(private http: HttpClient) { }
 

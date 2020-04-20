@@ -8,7 +8,7 @@ import { environment } from "../../environments/environment.prod";
 })
 export class ConocimientosService {
 
-  url = `${environment.urlLocal}conocimiento`;
+  url = `${environment.urlProd}conocimiento`;
 
   constructor(private http: HttpClient) { }
 
