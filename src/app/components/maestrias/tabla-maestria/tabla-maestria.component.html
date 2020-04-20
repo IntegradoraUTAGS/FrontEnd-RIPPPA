@@ -1,0 +1,14 @@
+<table id="tab1" class="tablausr table table-bordered table-white">
+    <tr>
+        <td>Maestría</td>
+        <td>Eliminar</td>
+        <td>Editar</td>
+    </tr>
+    <tr *ngFor="let maestria of maestrias">
+        <td>{{maestria.strMaestria}}</td>
+        <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(maestria)">Eliminar</button>
+        </td>
+        <td><button class="btn btn-outline-warning" type="button" (click)="actualizar(maestria._id)">Editar</button>
+        </td>
+    </tr>
+</table>

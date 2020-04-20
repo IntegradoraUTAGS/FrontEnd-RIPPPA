@@ -1,33 +1,18 @@
 <div class="row">
-    <div class="col-lg-5 col-md-12 mt-4 mb-4">
-        <h2>Maestrias</h2>
-        <form class="animated fadeIn fast" (ngSubmit)="registrarMaestria()" #forma="ngForm">
-<div class="form-group">
-    <input class="form-control" type="text" placeholder="Nombre de Maestria" required [(ngModel)]="maestria.strMaestria" #strMaestria="ngModel">
-    <button type="submit" class="btn btn-secondary">Registrar</button>
+  <div class=" col-md-12 mt-4 mb-4">
+    <app-registrar-maestria *ngIf="componentes.registrarMaestriasComponent" (actualizarTablaMa)="obtenerMaestrias()"
+      [idMaestria]="idMaestria">
+    </app-registrar-maestria>
+
+    <app-actualizar-maestria *ngIf="componentes.actualizarMaestriasComponent" [componentes]="componentes"
+      (actualizarTablaMa)="obtenerMaestrias()" [idMaestria]="idMaestria">
+    </app-actualizar-maestria>
+
+  </div>
+
+  <div class=" col-md-12 mt-4 mb-4">
+    <app-tabla-maestria *ngIf="componentes.tablaMaestriasComponent" [componentes]="componentes"
+      (salida)="mostrarActualizar($event)" [maestrias]="maestrias">
+    </app-tabla-maestria>
+  </div>
 </div>
-</form>
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Maestria</th>
-        <th scope="col">Eliminar</th>
-        <th scope="col">Editar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Example Maestria</td>
-        <td><button class="btn btn-outline-danger">Eliminar</button></td>
-        <td><button class="btn btn-outline-warning">Editar</button></td>
-      </tr>
-      <tr *ngFor="let ms of maestria">
-        <td>{{ms._id}}</td>
-        <td>{{ms.strMaestria}}</td>
-        <td><button class="btn btn-outline-danger" (click)='eliminarMaest(ms._id)'>Eliminar</button></td>
-        <td><button class="btn btn-outline-warning" (click)='actualMaest(ms._id)'>Editar</button></td>
-    </tr>
-    </tbody>
-  </table>
-
-

@@ -9,7 +9,7 @@ const Toast = Swal.mixin({
   showConfirmButton: false,
   timer: 3000
 
- });
+});
 
 
 @Component({
@@ -18,31 +18,35 @@ const Toast = Swal.mixin({
   styleUrls: ['./maestrias.component.css']
 })
 export class MaestriasComponent implements OnInit {
-  maestria:MaestriaModel=new MaestriaModel();
 
-  constructor(private maestriaService:MaestriaService) { }
-  ngOnInit() {
-    this.obtenerMaestria();
+  componentes = {
+    actualizarMaestriasComponent: false,
+    registrarMaestriasComponent: true,
+    tablaMaestriasComponent: true
+  };
+
+  maestrias: any;
+  idMaestria: string;
+
+
+  constructor(private maestriaService: MaestriaService) {
   }
 
-  obtenerMaestria($event?) {
+  ngOnInit() {
+    this.obtenerMaestrias();
+  }
+
+  obtenerMaestrias() {
     this.maestriaService.obtenerMaestria().then((maestrias: any) => {
-      this.maestria = maestrias.cont;
+      this.maestrias = maestrias.maestrias;
     }).catch((err: any) => {
       Toast.fire(err.error.msg, '', 'warning');
+      this.maestrias = [];
     });
   }
 
-  registrarMaestria(){
-    this.maestriaService.registrarMaestria(this.maestria).subscribe((result:any) => this.maestria = result);
+  mostrarActualizar(idMaestria: string) {
+    this.idMaestria = idMaestria;
   }
-  eliminarMaest(_id) {
-    this.maestriaService.eliminarMaestria(_id).subscribe((result: any) => this.maestria = result);
-  }
-
-  actualMaest(_id) {
-    this.maestriaService.actualizarMaestria(this.maestria, _id).subscribe((result: any) => this.maestria = result);
-  }
-  
 
 }
