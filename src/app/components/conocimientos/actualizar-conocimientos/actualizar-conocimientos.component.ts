@@ -37,7 +37,6 @@ export class ActualizarConocimientosComponent implements OnInit {
 
   actualizar() {
     this.conocimientosService.actualizarConocimiento(this.idConocimiento, this.conocimiento).then((resp: any) => {
-      console.log(resp);
       Toast.fire("Se ha actualizado correctamente", '', 'success');
       this.cancelar();
       this.actualizarTablaCon.emit();
