@@ -47,6 +47,9 @@ import { TablaDireccionesComponent } from './components/direcciones/tabla-direcc
 import { ActualizarConocimientosComponent } from './components/conocimientos/actualizar-conocimientos/actualizar-conocimientos.component';
 import { RegistrarConocimientosComponent } from './components/conocimientos/registrar-conocimientos/registrar-conocimientos.component';
 import { TablaConocimientosComponent } from './components/conocimientos/tabla-conocimientos/tabla-conocimientos.component';
+import { RegistrarOComponent } from './components/otros-conocimientos/registrar-o/registrar-o.component';
+import { ActualizarOComponent } from './components/otros-conocimientos/actualizar-o/actualizar-o.component';
+import { TablaOComponent } from './components/otros-conocimientos/tabla-o/tabla-o.component';
 
 
 @NgModule({
@@ -93,6 +96,9 @@ import { TablaConocimientosComponent } from './components/conocimientos/tabla-co
     ActualizarConocimientosComponent,
     RegistrarConocimientosComponent,
     TablaConocimientosComponent,
+    RegistrarOComponent,
+    ActualizarOComponent,
+    TablaOComponent,
 
   ],
   imports: [

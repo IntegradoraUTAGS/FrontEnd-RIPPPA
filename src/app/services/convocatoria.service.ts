@@ -11,37 +11,31 @@ import { environment } from "../../environments/environment.prod";
 })
 
 export class ConvocatoriaService {
-    url = `${environment.urlProd}convocatoria/`;
-    constructor(private http: HttpClient) { }
-
-
-  export class ConvocatoriaService {
   actualizarconvocatoria(idConvocatoria: any) {
     throw new Error("Method not implemented.");
   }
-    url = `http://localhost:3000/api/convocatoria`;
-      constructor(private http:HttpClient) { }
-    
-    
-      obtenerConvocatoria() {
-        return this.http.get(`${this.url}/obtener`).toPromise();
-    }
-    
-    obtenerConvocatoriaid(idCovocatoria: String) {
-        return this.http.get(`${this.url}/obtener/${idCovocatoria}`).toPromise();
-    }
-    
-    registrarConvocatoria(convocatoria: ConvocatoriaModel) {
-        return this.http.post(`${this.url}/registrar`, convocatoria).toPromise();
-    }
-    
-    actualizarConvocatoria(idCovocatoria: string, convocatoria: ConvocatoriaModel) {
-        return this.http.put(`${this.url}/actualizar/${idCovocatoria}`, convocatoria).toPromise();
-    }
-    
-    eliminarConvocatoria(idCovocatoria: String) {
-        return this.http.delete(`${this.url}/eliminar/${idCovocatoria}`).toPromise();
-    }
-       
-    }
-    
+  url = `${environment.urlProd}convocatoria`;
+  constructor(private http: HttpClient) { }
+
+
+  obtenerConvocatoria() {
+    return this.http.get(`${this.url}/obtener`).toPromise();
+  }
+
+  obtenerConvocatoriaid(idCovocatoria: String) {
+    return this.http.get(`${this.url}/obtener/${idCovocatoria}`).toPromise();
+  }
+
+  registrarConvocatoria(convocatoria: ConvocatoriaModel) {
+    return this.http.post(`${this.url}/registrar`, convocatoria).toPromise();
+  }
+
+  actualizarConvocatoria(idCovocatoria: string, convocatoria: ConvocatoriaModel) {
+    return this.http.put(`${this.url}/actualizar/${idCovocatoria}`, convocatoria).toPromise();
+  }
+
+  eliminarConvocatoria(idCovocatoria: String) {
+    return this.http.delete(`${this.url}/eliminar/${idCovocatoria}`).toPromise();
+  }
+
+}

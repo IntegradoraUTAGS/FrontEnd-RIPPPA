@@ -12,11 +12,14 @@ export class AdministradorService {
 
     private url: string = `${environment.urlProd}administrador/`;
 
+
     constructor(private http: HttpClient) { }
 
     login(administrador: AdministradorModel) {
         return this.http.post(this.url + 'login', administrador).toPromise();
     }
+
+
 
     mostrarAdmin() {
         return this.http.get(`${this.url}/obtener`).toPromise();

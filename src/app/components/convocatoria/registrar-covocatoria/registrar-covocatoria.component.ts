@@ -16,26 +16,28 @@ const Toast = Swal.mixin({
 })
 export class RegistrarCovocatoriaComponent implements OnInit {
 
-    @Output() salida = new EventEmitter();
-  
-    convocatoria: ConvocatoriaModel = new ConvocatoriaModel();
-  
-    constructor(private convocatoriaService: ConvocatoriaService) { }
-  
-    ngOnInit(): void {
-  
-    }
-  
-    registrarConvocatoria(forma: NgForm) {
-      this.convocatoriaService.registrarConvocatoria(this.convocatoria).then((resp: any) => {
-        Toast.fire(resp.msg, '', 'success');
-        forma.reset();
-        this.salida.emit();
-      }).catch((err) => {
-        console.log(err);
-      })
-  
-    }
+  @Output() salida = new EventEmitter();
+
+  convocatoria: ConvocatoriaModel = new ConvocatoriaModel();
+
+  direcciones: any;
+
+  constructor(private convocatoriaService: ConvocatoriaService) { }
+
+  ngOnInit(): void {
+
   }
-  
+
+  registrarConvocatoria(forma: NgForm) {
+    this.convocatoriaService.registrarConvocatoria(this.convocatoria).then((resp: any) => {
+      Toast.fire(resp.msg, '', 'success');
+      forma.reset();
+      this.salida.emit();
+    }).catch((err) => {
+      console.log(err);
+    })
+
+  }
+}
+
 
