@@ -1,0 +1,15 @@
+<div class="form-group">
+    <h3>Actualizar Convocatorias</h3>
+    <div class=" invalid-feedback ">
+        Favor de ingresar una una convocatoria.
+    </div>
+</div>
+   
+    <form (ngSubmit)="actualizar()" #forma="ngForm"> 
+        <input class="form-control" type="text" name="idConvocatoria" id="validationServer01"
+        [(ngModel)]="convocatoria.idConvocatoria" #idConvocatoria="ngModel" required>
+
+<button class="btn btn-outline-success btn-block" [disabled]="!forma.valid">Actualizar</button> 
+<button class="btn btn-outline-danger btn-block" type="button" (click)="cancelar()">Cancelar</button>
+</form>
+

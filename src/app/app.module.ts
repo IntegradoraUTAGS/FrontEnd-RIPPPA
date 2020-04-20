@@ -25,6 +25,7 @@ import { TablaComponent } from './components/licenciaturas/tabla/tabla.component
 import { HerramientaComponent } from './components/herramientas/herramientas.component';
 import { RegistrarAcademiaComponent } from './components/academia/registrar-academia/registrar-academia.component';
 import { ActualizarAcademiaComponent } from './components/academia/actualizar-academia/actualizar-academia.component';
+
 import { TablaAcademiaComponent } from './components/academia/tabla-academia/tabla-academia.component';
 import { ActualizarHerramientasComponent } from './components/herramientas/actualizar-herramientas/actualizar-herramientas.component';
 import { InsertarHerramientasComponent } from './components/herramientas/insertar-herramientas/insertar-herramientas.component';
@@ -32,6 +33,10 @@ import { TablaHerramientasComponent } from './components/herramientas/tabla-herr
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.component';
+import { RegistrarCovocatoriaComponent } from './components/convocatoria/registrar-covocatoria/registrar-covocatoria.component';
+import { ActualizarConvocatoriaComponent } from './components/convocatoria/actualizar-convocatoria/actualizar-convocatoria.component';
+import { TablaConvocatoriaComponent } from './components/convocatoria/tabla-convocatoria/tabla-convocatoria.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ActualizarMaestriaComponent } from './components/maestrias/actualizar-maestria/actualizar-maestria.component';
 import { RegistrarMaestriaComponent } from './components/maestrias/registrar-maestria/registrar-maestria.component';
@@ -42,6 +47,7 @@ import { TablaDireccionesComponent } from './components/direcciones/tabla-direcc
 import { ActualizarConocimientosComponent } from './components/conocimientos/actualizar-conocimientos/actualizar-conocimientos.component';
 import { RegistrarConocimientosComponent } from './components/conocimientos/registrar-conocimientos/registrar-conocimientos.component';
 import { TablaConocimientosComponent } from './components/conocimientos/tabla-conocimientos/tabla-conocimientos.component';
+
 
 @NgModule({
   declarations: [
@@ -73,6 +79,10 @@ import { TablaConocimientosComponent } from './components/conocimientos/tabla-co
     ActualizarHerramientasComponent,
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
+    ConvocatoriaComponent,
+    RegistrarCovocatoriaComponent,
+    ActualizarConvocatoriaComponent,
+    TablaConvocatoriaComponent,
     AdminComponent,
     ActualizarMaestriaComponent,
     RegistrarMaestriaComponent,
@@ -83,6 +93,7 @@ import { TablaConocimientosComponent } from './components/conocimientos/tabla-co
     ActualizarConocimientosComponent,
     RegistrarConocimientosComponent,
     TablaConocimientosComponent,
+
   ],
   imports: [
     BrowserModule,

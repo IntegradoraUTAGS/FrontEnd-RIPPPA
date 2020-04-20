@@ -1,5 +1,5 @@
 export class ConvocatoriaModel {
-    idconvocatoria?: String;
+    idConvocatoria?: string;
    idDireccion:string;
    idProfesor:String;
    idAcademia:string;
