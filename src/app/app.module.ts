@@ -39,6 +39,9 @@ import { TablaMaestriaComponent } from './components/maestrias/tabla-maestria/ta
 import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
 import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
 import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
+import { ActualizarConocimientosComponent } from './components/conocimientos/actualizar-conocimientos/actualizar-conocimientos.component';
+import { RegistrarConocimientosComponent } from './components/conocimientos/registrar-conocimientos/registrar-conocimientos.component';
+import { TablaConocimientosComponent } from './components/conocimientos/tabla-conocimientos/tabla-conocimientos.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,9 @@ import { TablaDireccionesComponent } from './components/direcciones/tabla-direcc
     ActualizarDireccionesComponent,
     InsertarDireccionesComponent,
     TablaDireccionesComponent,
+    ActualizarConocimientosComponent,
+    RegistrarConocimientosComponent,
+    TablaConocimientosComponent,
   ],
   imports: [
     BrowserModule,
