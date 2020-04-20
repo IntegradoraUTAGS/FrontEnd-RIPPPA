@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DireccionesModel } from '../../models/direcciones';
 import { DireccionesService } from 'src/app/services/direcciones.service';
+import Swal from 'sweetalert2';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
 
 @Component({
   selector: 'app-direcciones',
@@ -8,22 +15,33 @@ import { DireccionesService } from 'src/app/services/direcciones.service';
   styleUrls: ['./direcciones.component.css']
 })
 export class DireccionesComponent implements OnInit {
-  direcciones: DireccionesModel = new DireccionesModel();
-  constructor(private direccion: DireccionesService) { }
+  componentes = {
+    actualizarDireccionesComponent: false,
+    registrarDireccionesComponent: true,
+    tablaDireccionesComponent: true
+  };
 
-  ngOnInit(): void {
-    this.mostrarDirecciones();
+  direcciones: any;
+  idDireccion: string;
+
+
+  constructor(private direccionService: DireccionesService) {
   }
-  mostrarDirecciones() {
-    this.direccion.mostrarDirecciones().subscribe((result: any) => this.direcciones = result);
+
+  ngOnInit() {
+    this.obtenerDirecciones();
   }
-  registrarDirecciones() {
-    this.direccion.registrarDirecciones().subscribe((result: any) => this.direcciones = result);
+
+  obtenerDirecciones() {
+    this.direccionService.obtenerDireccion().then((direcciones: any) => {
+      this.direcciones = direcciones.direcciones;
+    }).catch((err: any) => {
+      Toast.fire(err.error.msg, '', 'warning');
+      this.direcciones = [];
+    });
   }
-  eliminarDirecciones(_id) {
-    this.direccion.eliminarDirecciones(_id).subscribe((result: any) => this.direcciones = result);
-  }
-  actualDirecciones(_id) {
-    this.direccion.actualDirecciones(_id).subscribe((result: any) => this.direcciones = result);
+
+  mostrarActualizar(idDireccion: string) {
+    this.idDireccion = idDireccion;
   }
 }

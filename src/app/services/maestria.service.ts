@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { MaestriaModel } from '../models/maestria';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+import { MaestriaModel } from '../models/maestria';
+import { environment } from "../../environments/environment.prod";
 
 @Injectable({
     providedIn: 'root'
 })
-
 export class MaestriaService {
 
-    constructor(private http: HttpClient) { }
-    url = `${environment.urlProd}maestria`;
+    url = `${environment.urlLocal}maestria`;
 
+    constructor(private http: HttpClient) { }
 
     obtenerMaestria() {
         return this.http.get(`${this.url}/obtener`).toPromise();
@@ -22,16 +21,14 @@ export class MaestriaService {
     }
 
     registrarMaestria(maestria: MaestriaModel) {
-        return this.http.post(`${this.url}/registrar`, maestria)
+        return this.http.post(`${this.url}/registrar`, maestria).toPromise();
     }
 
-    actualizarMaestria(maestria: MaestriaModel, idMaestria: String) {
-        return this.http.put(`${this.url}/actualizar/${idMaestria}`, maestria)
+    actualizarMaestria(idMaestria: String, maestria: MaestriaModel) {
+        return this.http.put(`${this.url}/actualizar/${idMaestria}`, maestria).toPromise();
     }
 
     eliminarMaestria(idMaestria: String) {
-        return this.http.delete(`${this.url}/eliminar/${idMaestria}`)
+        return this.http.delete(`${this.url}/eliminar/${idMaestria}`).toPromise();
     }
 }
-
-

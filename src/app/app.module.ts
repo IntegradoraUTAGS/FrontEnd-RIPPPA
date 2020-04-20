@@ -33,6 +33,12 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AdminComponent } from './components/admin/admin.component';
+import { ActualizarMaestriaComponent } from './components/maestrias/actualizar-maestria/actualizar-maestria.component';
+import { RegistrarMaestriaComponent } from './components/maestrias/registrar-maestria/registrar-maestria.component';
+import { TablaMaestriaComponent } from './components/maestrias/tabla-maestria/tabla-maestria.component';
+import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
+import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
+import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +71,12 @@ import { AdminComponent } from './components/admin/admin.component';
     InsertarHerramientasComponent,
     TablaHerramientasComponent,
     AdminComponent,
+    ActualizarMaestriaComponent,
+    RegistrarMaestriaComponent,
+    TablaMaestriaComponent,
+    ActualizarDireccionesComponent,
+    InsertarDireccionesComponent,
+    TablaDireccionesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DireccionesModel } from '../models/direcciones';
 import { environment } from "../../environments/environment.prod";
 @Injectable({
   providedIn: 'root'
 })
 export class DireccionesService {
-  private url: string = `${environment.urlProd}direccion/`
+  url = `${environment.urlLocal}direccion`;
+
   constructor(private http: HttpClient) { }
 
-  mostrarDirecciones() {
-    return this.http.get(`${this.url}obtener`);
+  obtenerDireccion() {
+    return this.http.get(`${this.url}/obtener`).toPromise();
   }
 
-  registrarDirecciones() {
-    return this.http.get(`${this.url}registrar`, {
-
-    });
+  obtenerDireccionid(idDireccion: String) {
+    return this.http.get(`${this.url}/obtener/${idDireccion}`).toPromise();
   }
-  eliminarDirecciones(_id) {
-    return this.http.delete(`${this.url}eliminar/:${_id}`);
-  }
-  actualDirecciones(_id) {
-    return this.http.put(`${this.url}actualizar/:${_id}`, {
 
-    });
+  registrarDireccion(direccion: DireccionesModel) {
+    return this.http.post(`${this.url}/registrar`, direccion).toPromise();
+  }
+
+  actualizarDireccion(idDireccion: String, direccion: DireccionesModel) {
+    return this.http.put(`${this.url}/actualizar/${idDireccion}`, direccion).toPromise();
+  }
+
+  eliminarDireccion(idDireccion: String) {
+    return this.http.delete(`${this.url}/eliminar/${idDireccion}`).toPromise();
   }
 
 }

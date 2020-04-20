@@ -1,0 +1,9 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarDireccion(forma)" #forma="ngForm">
+
+    <div class="form-group">
+        <h3>Direcciones Académicas</h3>
+        <input class="form-control" type="text" placeholder="Nombre de la direccion académica" id=" validationServer01"
+            name="strNombre" [(ngModel)]="direccion.strNombre" #strNombre="ngModel" required>
+    </div>
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">AGREGAR</button>
+</form>
