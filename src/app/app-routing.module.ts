@@ -14,7 +14,7 @@ import { PeriodoConvocatoriasComponent } from './components/periodo-convocatoria
 import { ProfesorComponent } from "./components/profesor/profesor.component";
 import { HerramientaComponent } from "./components/herramientas/herramientas.component";
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
-
+import{ ConvocatoriaComponent } from "./components/convocatoria/convocatoria.component"
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'maestrias', component: MaestriasComponent },
   { path: 'periodo', component: PeriodoConvocatoriasComponent },
   { path: 'profesor', component: ProfesorComponent },
-  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] }
+  { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] },
+  { path: 'convocatoria', component: ConvocatoriaComponent}
 ];
 
 

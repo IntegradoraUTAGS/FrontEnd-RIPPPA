@@ -42,7 +42,7 @@ export class TablaConvocatoriaComponent implements OnInit {
 
   eliminar(convocatoria: ConvocatoriaModel) {
     Swal.fire({
-      title: `¿Estás seguro qué deseas eliminar esta Convocatoria : ${convocatoria.idconvocatoria}?`,
+      title: `¿Estás seguro qué deseas eliminar esta Convocatoria : ${convocatoria.idConvocatoria}?`,
       text: 'No se pueden revertir los cambios',
       icon: 'warning',
       showCancelButton: true,
@@ -52,7 +52,7 @@ export class TablaConvocatoriaComponent implements OnInit {
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.value) {
-        this.convocatoriaService.eliminarConvocatoria(convocatoria.idconvocatoria).then((convocatoria: any) => {
+        this.convocatoriaService.eliminarConvocatoria(convocatoria.idConvocatoria).then((convocatoria: any) => {
           Toast.fire(convocatoria.msg, '', 'success');
           this.componentes.convocatoriaregistrarComponent = true;
           this.componentes.convocatoriaactualizarComponent = false;

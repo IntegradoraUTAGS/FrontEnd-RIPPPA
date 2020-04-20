@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   actualizarconvocatoria(idConvocatoria: any) {
     throw new Error("Method not implemented.");
   }
-    url = `http://localhost:3000/convocatoria`;
+    url = `http://localhost:3000/api/convocatoria`;
       constructor(private http:HttpClient) { }
     
     
@@ -26,8 +26,8 @@ import { HttpClient } from '@angular/common/http';
         return this.http.post(`${this.url}/registrar`, convocatoria).toPromise();
     }
     
-    actualizarConvocatoria(idCovocatoria: ConvocatoriaModel) {
-        return this.http.put(`${this.url}/actualizar/${idCovocatoria}`, idCovocatoria).toPromise();
+    actualizarConvocatoria(idCovocatoria: string, convocatoria: ConvocatoriaModel) {
+        return this.http.put(`${this.url}/actualizar/${idCovocatoria}`, convocatoria).toPromise();
     }
     
     eliminarConvocatoria(idCovocatoria: String) {

@@ -8,12 +8,12 @@
 
     <input class="form-control" type="number" placeholder="id Direcion "name="idDireccion"required [(ngModel)]="convocatoria.idDireccion" #idDireccion="ngModel">
     <input class="form-control" type="number" placeholder="id Profesor" required name="idProfesor"  [(ngModel)]="convocatoria.idProfesor" #idProfesor="ngModel">
-    <input class="form-control" type="number" placeholder="id Academia" required name="idAcademia"[(ngModel)]="convocatoria.idAcademia" #idacademia="ngModel"> 
+    <input class="form-control" type="number" placeholder="id Academia" required name="idAcademia"[(ngModel)]="convocatoria.idAcademia" #idAcademia="ngModel"> 
     <input class="form-control" type="date" placeholder="Fecha de publicacion " required name="DateFecha"  [(ngModel)]="convocatoria.DateFecha" #DateFecha="ngModel">
-    <input class="form-control" type="number" placeholder="id del periodo" required name="idPeriodo"[(ngModel)]="convocatoria.idPeriodo" #idPedioro="ngModel"> 
-    <input class="form-control" type="date" placeholder="fecha a cubrir " required name="dateFechaDebeCubrirse"  [(ngModel)]="convocatoria.dateFechaDebeCubrirse" #dateFechaDebeCubrirse="ngModel">>
+    <input class="form-control" type="number" placeholder="id del periodo" required name="idPeriodo"[(ngModel)]="convocatoria.idPeriodo" #idPeriodo="ngModel"> 
+    <input class="form-control" type="date" placeholder="fecha a cubrir " required name="dateFechaDebeCubrirse"  [(ngModel)]="convocatoria.dateFechaDebeCubrirse" #dateFechaDebeCubrirse="ngModel">
     <input class="form-control" type="text" placeholder="turno" required name="strTurno" [(ngModel)]="convocatoria.strTurno" #strTurno="ngModel">
-    <input class="form-control" type="number" placeholder="numero de horas " name="numHoras" required[(ngModel)]="convocatoria.numHoras" #numHoras="ngModel">
+    <input class="form-control" type="number" placeholder="numero de horas " name="numHoras" required [(ngModel)]="convocatoria.numHoras" #numHoras="ngModel">
     
 
     <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">AGREGAR</button>

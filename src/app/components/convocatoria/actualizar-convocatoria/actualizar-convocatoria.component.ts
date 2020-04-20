@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ConvocatoriaModel } from 'src/app/models/convocatoria';
 import { ConvocatoriaService } from 'src/app/services/convocatoria.service';
 import Swal from 'sweetalert2';
+import { NgForm } from '@angular/forms';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -14,7 +15,7 @@ const Toast = Swal.mixin({
   templateUrl: './actualizar-convocatoria.component.html',
   styleUrls: ['./actualizar-convocatoria.component.css']
 })
-export class ActualizarconvocatoriaComponent implements OnInit {
+export class ActualizarConvocatoriaComponent implements OnInit {
 
   @Input() componentes;
   @Input() idConvocatoria;
@@ -35,7 +36,7 @@ export class ActualizarconvocatoriaComponent implements OnInit {
   }
 
   actualizar() {
-    this.convocatoriaService.actualizarconvocatoria(this.idConvocatoria).then((resp: any) => {
+    this.convocatoriaService.actualizarConvocatoria(this.idConvocatoria, this.convocatoria).then((resp: any) => {
       console.log(resp);
       Toast.fire("Se ha actualizado correctamente", '', 'success');
       this.cancelar();
@@ -48,7 +49,7 @@ export class ActualizarconvocatoriaComponent implements OnInit {
 
   cancelar() {
     this.componentes.registrarconvocatoriaComponent = true;
-    this.componentes.actualizarconvocatoriaComponent = false;
+    this.componentes.actualizarConvocatoriaComponent = false;
   }
 
 }

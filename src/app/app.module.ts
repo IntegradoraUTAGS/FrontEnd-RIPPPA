@@ -25,6 +25,7 @@ import { TablaComponent } from './components/licenciaturas/tabla/tabla.component
 import { HerramientaComponent } from './components/herramientas/herramientas.component';
 import { RegistrarAcademiaComponent } from './components/academia/registrar-academia/registrar-academia.component';
 import { ActualizarAcademiaComponent } from './components/academia/actualizar-academia/actualizar-academia.component';
+
 import { TablaAcademiaComponent } from './components/academia/tabla-academia/tabla-academia.component';
 import { ActualizarHerramientasComponent } from './components/herramientas/actualizar-herramientas/actualizar-herramientas.component';
 import { InsertarHerramientasComponent } from './components/herramientas/insertar-herramientas/insertar-herramientas.component';

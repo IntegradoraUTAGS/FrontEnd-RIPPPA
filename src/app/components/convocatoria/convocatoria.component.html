@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-5 col-md-12 mt-4 mb-4">
-        <app-insertar-covocatoria *ngIf="componentes.registrarconvocatoriaComponent" (salida)="obtenerConvocatoria()">
-        </app-insertar-covocatoria>
+        <app-registrar-covocatoria *ngIf="componentes.registrarconvocatoriaComponent" (salida)="obtenerConvocatoria()">
+        </app-registrar-covocatoria>
 
         <app-actualizar-convocatoria *ngIf="componentes.actualizarconvocatoriaComponent" [componentes]="componentes"
             [idConvocatoria]="idConvocatoria"></app-actualizar-convocatoria>
