@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
 import { ConvocatoriaModel } from '../models/convocatoria';
+
 import { HttpClient } from '@angular/common/http';
+
+
+import { environment } from "../../environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
+
+export class ConvocatoriaService {
+    url = `${environment.urlProd}convocatoria/`;
+    constructor(private http: HttpClient) { }
+
 
   export class ConvocatoriaService {
   actualizarconvocatoria(idConvocatoria: any) {

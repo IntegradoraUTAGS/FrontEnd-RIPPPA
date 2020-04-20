@@ -1,5 +1,6 @@
 export class MaestriaModel {
     _id?: string;
-    strMaestria:string;
+    strMaestria: string;
+    blnDisponible: boolean;
 
 }

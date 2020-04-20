@@ -1,16 +1,18 @@
 <div class="row">
-    <div class="col-lg-5 col-md-12 mt-4 mb-4">
-        <app-insertar-herramientas *ngIf="componentes.registrarHerramientasComponent" (salida)="obtenerHerramientas()">
+    <div class=" col-md-12 mt-4 mb-4">
+        <app-insertar-herramientas *ngIf="componentes.registrarHerramientasComponent"
+            (actualizarTablaH)="obtenerHerramientas()" [idHerramienta]="idHerramienta">
         </app-insertar-herramientas>
 
         <app-actualizar-herramientas *ngIf="componentes.actualizarHerramientasComponent" [componentes]="componentes"
-            [idHerramienta]="idHerramienta"></app-actualizar-herramientas>
+            (actualizarTablaH)="obtenerHerramientas()" [idHerramienta]="idHerramienta">
+        </app-actualizar-herramientas>
 
     </div>
 
-    <div class="col-lg-7 col-md-12 mt-4 mb-4">
+    <div class=" col-md-12 mt-4 mb-4">
         <app-tabla-herramientas *ngIf="componentes.tablaHerramientasComponent" [componentes]="componentes"
-            (salida)="mostrarActualizar($event)" (actualizarHerramientas)="obtenerHerramientas()">
+            (salida)="mostrarActualizar($event)" [herramientas]="herramientas">
         </app-tabla-herramientas>
     </div>
 </div>

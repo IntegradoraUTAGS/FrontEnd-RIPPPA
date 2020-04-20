@@ -37,6 +37,17 @@ import { ConvocatoriaComponent } from './components/convocatoria/convocatoria.co
 import { RegistrarCovocatoriaComponent } from './components/convocatoria/registrar-covocatoria/registrar-covocatoria.component';
 import { ActualizarConvocatoriaComponent } from './components/convocatoria/actualizar-convocatoria/actualizar-convocatoria.component';
 import { TablaConvocatoriaComponent } from './components/convocatoria/tabla-convocatoria/tabla-convocatoria.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ActualizarMaestriaComponent } from './components/maestrias/actualizar-maestria/actualizar-maestria.component';
+import { RegistrarMaestriaComponent } from './components/maestrias/registrar-maestria/registrar-maestria.component';
+import { TablaMaestriaComponent } from './components/maestrias/tabla-maestria/tabla-maestria.component';
+import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
+import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
+import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
+import { ActualizarConocimientosComponent } from './components/conocimientos/actualizar-conocimientos/actualizar-conocimientos.component';
+import { RegistrarConocimientosComponent } from './components/conocimientos/registrar-conocimientos/registrar-conocimientos.component';
+import { TablaConocimientosComponent } from './components/conocimientos/tabla-conocimientos/tabla-conocimientos.component';
+
 
 @NgModule({
   declarations: [
@@ -72,9 +83,19 @@ import { TablaConvocatoriaComponent } from './components/convocatoria/tabla-conv
     RegistrarCovocatoriaComponent,
     ActualizarConvocatoriaComponent,
     TablaConvocatoriaComponent,
+    AdminComponent,
+    ActualizarMaestriaComponent,
+    RegistrarMaestriaComponent,
+    TablaMaestriaComponent,
+    ActualizarDireccionesComponent,
+    InsertarDireccionesComponent,
+    TablaDireccionesComponent,
+    ActualizarConocimientosComponent,
+    RegistrarConocimientosComponent,
+    TablaConocimientosComponent,
+
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

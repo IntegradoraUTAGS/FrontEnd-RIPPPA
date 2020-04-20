@@ -1,0 +1,10 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarConocimiento(forma)" #forma="ngForm">
+
+    <div class="form-group">
+        <h3>Conocimientos</h3>
+        <input class="form-control" type="text" placeholder="Nombre del Conocimientos" id="validationServer01"
+            name="strConocimientos" [(ngModel)]="conocimiento.strConocimientos" #strConocimientos="ngModel" required>
+
+    </div>
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">AGREGAR</button>
+</form>

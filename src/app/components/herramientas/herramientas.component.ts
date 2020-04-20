@@ -32,7 +32,7 @@ export class HerramientaComponent implements OnInit {
     this.obtenerHerramientas();
   }
 
-  obtenerHerramientas($event?) {
+  obtenerHerramientas() {
     this.herramientaService.obtenerHerramienta().then((herramientas: any) => {
       this.herramientas = herramientas.herramientas;
     }).catch((err: any) => {

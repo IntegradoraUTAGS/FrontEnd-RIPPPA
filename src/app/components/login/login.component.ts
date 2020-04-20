@@ -28,10 +28,16 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: NgForm) {
     this.service.login(this.administrador).then((administrador: any) => {
+
       form.reset();
       localStorage.setItem('token', administrador.token);
       console.log(administrador.token);
-      this.router.navigateByUrl('');
+      if (localStorage.getItem('token')) {
+        location.reload();
+        this.router.navigateByUrl('admin');
+      }
+
+
     }).catch((err: any) => {
       console.log(err);
       Swal.fire({
@@ -41,5 +47,6 @@ export class LoginComponent implements OnInit {
       })
       form.resetForm();
     });
+
   }
 }
