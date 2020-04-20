@@ -15,24 +15,24 @@ import { ProfesorComponent } from "./components/profesor/profesor.component";
 import { HerramientaComponent } from "./components/herramientas/herramientas.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
-import{ ConvocatoriaComponent } from "./components/convocatoria/convocatoria.component"
+import { ConvocatoriaComponent } from "./components/convocatoria/convocatoria.component"
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-
-  { path: 'direcciones', component: DireccionesComponent },
+  { path: 'direcciones', component: DireccionesComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'administrador', component: AdministradorComponent },
   { path: 'academia', component: AcademiaComponent },
   { path: 'acercaDe', component: AcercaDeNosotrosComponent },
-  { path: 'conocimientos', component: ConocimientosComponent },
+  { path: 'conocimientos', component: ConocimientosComponent, canActivate: [AuthGuard] },
   { path: 'licenciaturas', component: LicenciaturasComponent, canActivate: [AuthGuard] },
-  { path: 'maestrias', component: MaestriasComponent },
+  { path: 'maestrias', component: MaestriasComponent, canActivate: [AuthGuard] },
   { path: 'periodo', component: PeriodoConvocatoriasComponent },
   { path: 'profesor', component: ProfesorComponent },
   { path: 'herramientas', component: HerramientaComponent, canActivate: [AuthGuard] },
-  { path: 'convocatoria', component: ConvocatoriaComponent},
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+  { path: 'convocatoria', component: ConvocatoriaComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'otrosConocimientos', component: OtrosConocimientosComponent, canActivate: [AuthGuard] }
 
 ];
 

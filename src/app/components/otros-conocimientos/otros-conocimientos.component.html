@@ -1,1 +1,18 @@
-<p>otros-conocimientos works!</p>
+<div class="row">
+    <div class=" col-md-12 mt-4 mb-4">
+        <app-registrar-o *ngIf="componentes.registrarOComponent" (actualizarTablaCon)="obtenerConocimientos()"
+            [idConocimiento]="idConocimiento">
+        </app-registrar-o>
+
+        <app-actualizar-o *ngIf="componentes.actualizarOComponent" [componentes]="componentes"
+            (actualizarTablaCon)="obtenerConocimientos()" [idConocimiento]="idConocimiento">
+        </app-actualizar-o>
+
+    </div>
+
+    <div class=" col-md-12 mt-4 mb-4">
+        <app-tabla-o *ngIf="componentes.tablaOComponent" [componentes]="componentes"
+            (salida)="mostrarActualizar($event)" [conocimientos]="conocimientos">
+        </app-tabla-o>
+    </div>
+</div>
