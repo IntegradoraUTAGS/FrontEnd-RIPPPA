@@ -36,10 +36,6 @@
             <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == true">
                 <a class="nav-link" [routerLink]="'direcciones'">Direcciones Académicas</a>
             </li>
-
-            <li class="nav-item" routerLinkActive="active" *ngIf="checkStatus == true">
-                <a class="nav-link" [routerLink]="'convocatoria'">Convocatoria</a>
-            </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-light my-2 my-sm-0" *ngIf="checkStatus == false" [routerLink]="'login'"

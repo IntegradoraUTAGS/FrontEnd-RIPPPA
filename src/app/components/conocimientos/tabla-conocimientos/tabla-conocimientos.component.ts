@@ -26,8 +26,6 @@ export class TablaConocimientosComponent implements OnInit {
 
   ngOnInit() {
     this.conocimientosService.obtenerConocimiento().then((resp: any) => {
-      console.log(resp);
-
       this.conocimientos = resp.conocimientos;
     }).catch((err) => {
       console.log(err);

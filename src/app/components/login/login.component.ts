@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
 
       form.reset();
       localStorage.setItem('token', administrador.token);
-      console.log(administrador.token);
       if (localStorage.getItem('token')) {
         location.reload();
         this.router.navigateByUrl('admin');

@@ -36,7 +36,6 @@ export class ActualizarComponent implements OnInit {
 
   actualizar() {
     this.licenciaturaService.actualizarLicenciatura(this.idLicenciatura, this.licenciatura).then((resp: any) => {
-      console.log(resp);
       Toast.fire("Se ha actualizado correctamente", '', 'success');
       this.salida.emit();
       this.actualizarTabla.emit();
