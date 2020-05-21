@@ -6,6 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthService {
     constructor(public jwtHelper: JwtHelperService) { }
 
+    //verificar si hay un token 
     public isAuthenticated(): boolean {
         const token = localStorage.getItem('token');
         return !this.jwtHelper.isTokenExpired(token);

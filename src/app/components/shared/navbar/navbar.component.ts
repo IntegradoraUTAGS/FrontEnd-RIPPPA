@@ -15,9 +15,9 @@ export class NavbarComponent implements OnInit {
   }
 
   cerrarSesion() {
-    location.reload();
     localStorage.clear();
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('login');
+    location.reload();
   }
 
   mySubscription: any;
@@ -33,5 +33,4 @@ export class NavbarComponent implements OnInit {
     };
 
   }
-
 }

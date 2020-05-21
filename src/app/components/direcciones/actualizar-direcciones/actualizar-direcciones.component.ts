@@ -26,6 +26,7 @@ export class ActualizarDireccionesComponent implements OnInit {
 
   constructor(private direccionService: DireccionesService) { }
 
+  //funcion para obtener direccion por id 
   ngOnInit() {
     this.direccionService.obtenerDireccionid(this.idDireccion).then((resp: any) => {
       console.log(resp.dir);
@@ -37,7 +38,7 @@ export class ActualizarDireccionesComponent implements OnInit {
       console.log(err);
     });
   }
-
+  //funcion para actualizar direcciones
   actualizar() {
     this.direccionService.actualizarDireccion(this.idDireccion, this.direccion).then((resp: any) => {
       console.log(resp);

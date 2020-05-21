@@ -27,7 +27,7 @@ export class RegistrarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //funcion para registrar una licenciaturas
   registrarLicenciatura(forma: NgForm) {
     this.licenciaturaService.registrarLicenciatura(this.licenciatura).then((resp: any) => {
       Toast.fire(resp.msg, '', 'success');

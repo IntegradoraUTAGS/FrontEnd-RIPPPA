@@ -23,7 +23,7 @@ export class TablaDireccionesComponent implements OnInit {
   @Input() direcciones: DireccionesModel[];
 
   constructor(private direccionService: DireccionesService) { }
-
+  //funcion para rellenar tabla 
   ngOnInit() {
     this.direccionService.obtenerDireccion().then((resp: any) => {
       this.direcciones = resp.direcciones;
@@ -31,7 +31,7 @@ export class TablaDireccionesComponent implements OnInit {
       console.log(err);
     });
   }
-
+  //funcion para ocultar el componente registrar y mostrar el componente actualizar pasando como parametro el id de direccion
   actualizar(idDireccion: string) {
     this.componentes.registrarDireccionesComponent = false;
     this.componentes.actualizarDireccionesComponent = true;
@@ -39,7 +39,7 @@ export class TablaDireccionesComponent implements OnInit {
     console.log(idDireccion);
 
   }
-
+  //funcion para eliminar una direccion
   eliminar(direccion: DireccionesModel) {
     Swal.fire({
       title: `¿Estás seguro qué deseas eliminar esta dirección? : ${direccion.strNombre}?`,

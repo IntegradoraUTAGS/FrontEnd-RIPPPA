@@ -31,7 +31,7 @@ export class DireccionesComponent implements OnInit {
   ngOnInit() {
     this.obtenerDirecciones();
   }
-
+  //funcion de obtener direcciones
   obtenerDirecciones() {
     this.direccionService.obtenerDireccion().then((direcciones: any) => {
       this.direcciones = direcciones.direcciones;

@@ -25,15 +25,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //funcion para iniciar sesion 
   onLogin(form: NgForm) {
     this.service.login(this.administrador).then((administrador: any) => {
 
       form.reset();
       localStorage.setItem('token', administrador.token);
       if (localStorage.getItem('token')) {
-        location.reload();
+
         this.router.navigateByUrl('admin');
+        location.reload();
       }
 
 
