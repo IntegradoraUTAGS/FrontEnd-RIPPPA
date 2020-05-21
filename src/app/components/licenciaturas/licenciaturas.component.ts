@@ -35,7 +35,7 @@ export class LicenciaturasComponent implements OnInit {
   ngOnInit() {
     this.obtenerLicenciaturas();
   }
-
+  //funcion para obtener licenciaturas
   obtenerLicenciaturas() {
     this.licenciaturaService.obtenerLicenciatura().then((licenciaturas: any) => {
       this.licenciaturas = licenciaturas.cont;

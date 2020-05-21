@@ -29,6 +29,7 @@ export class InsertarDireccionesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //funcion para registrar direcciones
   registrarDireccion(forma: NgForm) {
     this.direccionService.registrarDireccion(this.direccion).then((resp: any) => {
       Toast.fire('Se agregó correctamente', '', 'success');

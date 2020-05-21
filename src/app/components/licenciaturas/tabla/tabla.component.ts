@@ -24,6 +24,7 @@ export class TablaComponent implements OnInit {
 
   constructor(private licenciaturaService: LicenciaturaService) { }
 
+  //funcion para rellenar tabla
   ngOnInit() {
     this.licenciaturaService.obtenerLicenciatura().then((resp: any) => {
       this.licenciaturas = resp.cont;
@@ -31,13 +32,13 @@ export class TablaComponent implements OnInit {
       console.log(err);
     });
   }
-
+  //mostrar el componente actualizar y ocultar el componente registrar pasando como parametro el id a actualizar
   actualizar(idLicenciatura: string) {
     this.componentes.registrarComponent = false;
     this.componentes.actualizarComponent = true;
     this.salida.emit(idLicenciatura);
   }
-
+  //funcion para eliminar una licenciatura
   eliminar(licenciatura: LicenciaturaModel) {
     Swal.fire({
       title: `¿Estás seguro qué deseas eliminar esta licenciatua : ${licenciatura.strLicenciatura}?`,

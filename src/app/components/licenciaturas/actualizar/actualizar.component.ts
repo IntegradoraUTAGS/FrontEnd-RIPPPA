@@ -26,6 +26,7 @@ export class ActualizarComponent implements OnInit {
 
   constructor(private licenciaturaService: LicenciaturaService) { }
 
+  //funcion para obtener un id de licenciatura
   ngOnInit() {
     this.licenciaturaService.obtenerLicenciaturaid(this.idLicenciatura).then((resp: any) => {
       this.licenciatura = resp.cont;
@@ -33,7 +34,7 @@ export class ActualizarComponent implements OnInit {
       console.log(err);
     });
   }
-
+  //funcion para actualizar licenciaturas
   actualizar() {
     this.licenciaturaService.actualizarLicenciatura(this.idLicenciatura, this.licenciatura).then((resp: any) => {
       Toast.fire("Se ha actualizado correctamente", '', 'success');
@@ -47,7 +48,7 @@ export class ActualizarComponent implements OnInit {
     });
 
   }
-
+  //funcion de cancelar que oculta componente registrar y muestra el de actualizar
   cancelar() {
     this.componentes.registrarComponent = true;
     this.componentes.actualizarComponent = false;
