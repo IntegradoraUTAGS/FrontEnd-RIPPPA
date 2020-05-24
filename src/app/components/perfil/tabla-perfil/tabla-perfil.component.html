@@ -1,0 +1,19 @@
+<table id="tab1" class="table table-striped">
+    <tr>
+        <td>Perfiles Activos</td>
+        <td>Academia</td>
+        <td>Ver más</td>
+        <td>Eliminar</td>
+        <td>Editar</td>
+    </tr>
+    <tr *ngFor="let perfil of perfiles">
+        <td>{{perfil.strNombre}}</td>
+        <td>{{perfil.idAcademia.strNombre}}</td>
+        <td><button class="btn btn-outline-success" type="button">Ver más</button>
+        </td>
+        <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(perfil)">Eliminar</button>
+        </td>
+        <td><button class="btn btn-outline-warning" type="button" (click)="actualizar(perfil._id)">Editar</button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,37 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarPerfil(forma)" #forma="ngForm">
+    <h3 style="text-align: center;">Perfiles Academicos</h3>
+
+
+    <div class="form-group">
+
+        <select class="form-control" name="idAcademia" [(ngModel)]="perfil.idAcademia" #idAcademia="ngModel"
+            id="validationServer05" required>
+            <option value="" selected="" hidden="" [ngValue]="undefined">Selecciona una academia</option>
+            <option [value]="academia._id" *ngFor="let academia of academias">{{academia.strNombre}}</option>
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar nombre del perfil" id="validationServer01"
+            name="strNombre" [(ngModel)]="perfil.strNombre" #strNombre="ngModel" required>
+
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar el genero" id="validationServer02"
+            name="strGenero" [(ngModel)]="perfil.strGenero" #strGenero="ngModel" required>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar el estado civil" id="validationServer03"
+            name="strEstadoCivil" [(ngModel)]="perfil.strEstadoCivil" #strEstadoCivil="ngModel" required>
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">Agregar perfil</button>
+</form>
