@@ -23,18 +23,22 @@ export class RegistrarPerfilComponent implements OnInit {
   @Output() actualizarTabla = new EventEmitter()
   @Input() idPerfil;
   perfil: PerfilModel = new PerfilModel();
+
+  requisitos: any;
+  requisitosCon: any;
+  requisitosHerr: any;
+  requisitosHD: any;
+
   academias: PerfilModel[];
+
   constructor(private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-
-    this.perfilService.obtenerAcademias().then((resp: any) => {
-      this.academias = resp.academias;
-    }).catch((err) => {
-      console.log(err);
-    });
-
-
+    this.obtenerAcademias();
+    this.requisitos = [{ arrFormacionProfesional: '' }];
+    this.requisitosCon = [{ arrConocimientos: '' }];
+    this.requisitosHerr = [{ arrHerramientas: '' }];
+    this.requisitosHD = [{ arrHabilidadesDestrezas: '' }];
   }
 
   registrarPerfil(forma: NgForm) {
@@ -47,6 +51,65 @@ export class RegistrarPerfilComponent implements OnInit {
     })
   }
 
+  obtenerAcademias() {
+    this.perfilService.obtenerAcademias().then((resp: any) => {
+      this.academias = resp.academias;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+  //fORMACION PROFESIONAL
+  agregarFP() {
+    this.requisitos.push({ arrFormacionProfesional: '' });
+    console.log(this.requisitos);
+
+  }
+
+  eliminarFP(index: number) {
+    this.requisitos.splice(index, 1);
+  }
+  //CONOCIMIENTOS
+  agregarCon() {
+    this.requisitosCon.push({ arrConocimientos: '' });
+    console.log(this.requisitosCon);
+
+  }
+
+  eliminarCon(index: number) {
+    this.requisitosCon.splice(index, 1);
+  }
+  //HERRAMIENTAS
+  agregarHerr() {
+    this.requisitosHerr.push({ arrHerramientas: '' });
+    console.log(this.requisitosHerr);
+
+  }
+
+  eliminarHerr(index: number) {
+    this.requisitosHerr.splice(index, 1);
+  }
+  //HABILIDADES Y DESTREZAS
+  agregarHD() {
+    this.requisitosHD.push({ arrHabilidadesDestrezas: '' });
+    console.log(this.requisitosHD);
+
+  }
+
+  eliminarHD(index: number) {
+    this.requisitosHD.splice(index, 1);
+  }
+
+
+
+
+  enviar() {
+    console.log(this.requisitos);
+    console.log(this.requisitosHerr);
+    console.log(this.requisitosCon);
+    console.log(this.requisitosHD);
+    console.log(this.perfil);
+
+  }
 
 
 }
