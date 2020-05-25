@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,6 +28,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
 import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
 import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ActualizarPerfilComponent } from './components/perfil/actualizar-perfil/actualizar-perfil.component';
+import { RegistrarPerfilComponent } from './components/perfil/registrar-perfil/registrar-perfil.component';
+import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-perfil.component';
 
 
 
@@ -54,13 +58,18 @@ import { TablaDireccionesComponent } from './components/direcciones/tabla-direcc
     AdminComponent,
     ActualizarDireccionesComponent,
     InsertarDireccionesComponent,
-    TablaDireccionesComponent
+    TablaDireccionesComponent,
+    PerfilComponent,
+    ActualizarPerfilComponent,
+    RegistrarPerfilComponent,
+    TablaPerfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService, AdministradorModel, AuthGuard, AuthService],

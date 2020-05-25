@@ -1,0 +1,250 @@
+<form class="animated fadeIn fast" (ngSubmit)="registrarPerfil(forma)" #forma="ngForm">
+    <h3 style="text-align: center;">Perfiles Académicos</h3>
+
+
+    <div class="form-group">
+
+        <select class="form-control" name="idAcademia" [(ngModel)]="perfil.idAcademia" #idAcademia="ngModel"
+            id="validationServer05" required
+            [ngClass]="{ 'is-invalid': !idAcademia.valid && idAcademia.touched,'is-valid': idAcademia.valid}">
+            <option value="" selected="" hidden="" [ngValue]="undefined">Selecciona una academia</option>
+            <option [value]="academia._id" *ngFor="let academia of academias">{{academia.strNombre}}</option>
+        </select>
+        <div class="invalid-feedback">
+            Ingrese la académia
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar nombre del perfil" id="validationServer01"
+            name="strNombre" [(ngModel)]="perfil.strNombre" #strNombre="ngModel"
+            [ngClass]="{ 'is-invalid': !strNombre.valid && strNombre.touched,'is-valid': strNombre.valid}" required>
+        <div class="invalid-feedback">
+            Ingrese el nombre del perfil
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar el género" id="validationServer02"
+            name="strGenero" [(ngModel)]="perfil.strGenero" #strGenero="ngModel"
+            [ngClass]="{ 'is-invalid': !strGenero.valid && strGenero.touched,'is-valid': strGenero.valid}" required>
+        <div class="invalid-feedback">
+            Ingrese el género requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar el estado civil" id="validationServer03"
+            name="strEstadoCivil" [(ngModel)]="perfil.strEstadoCivil" #strEstadoCivil="ngModel"
+            [ngClass]="{ 'is-invalid': !strEstadoCivil.valid && strEstadoCivil.touched,'is-valid': strEstadoCivil.valid}"
+            required>
+        <div class="invalid-feedback">
+            Ingrese el estado civil requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar el idioma deseado" id="validationServer04"
+            name="strIdiomas" [(ngModel)]="perfil.strIdiomas" #strIdiomas="ngModel"
+            [ngClass]="{ 'is-invalid': !strIdiomas.valid && strIdiomas.touched,'is-valid': strIdiomas.valid}" required>
+        <div class="invalid-feedback">
+            Ingrese el nivel del idioma que necesite
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar Experiencia laboral" id="validationServer05"
+            name="strExpLaboral" [(ngModel)]="perfil.strExpLaboral" #strExpLaboral="ngModel"
+            [ngClass]="{ 'is-invalid': !strExpLaboral.valid && strExpLaboral.touched,'is-valid': strExpLaboral.valid}"
+            required>
+        <div class="invalid-feedback">
+            Ingrese la experiencia laboral requerida
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Ingresar Experiencia docente" id="validationServer06"
+            name="strExpDocente" [(ngModel)]="perfil.strExpDocente" #strExpDocente="ngModel"
+            [ngClass]="{ 'is-invalid': !strExpDocente.valid && strExpDocente.touched,'is-valid': strExpDocente.valid}"
+            required>
+        <div class="invalid-feedback">
+            Ingrese la experiencia docente requeriday
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------------------------------------------->
+    <hr>
+    <h4>Formación profesional</h4>
+    <div class="form-group">
+        <div class="form-row" *ngFor="let item of requisitos; let index=index">
+            <div class="form-group col">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" id="validationServer07" type="text"
+                            [(ngModel)]="requisitos[index].arrFormacionProfesional"
+                            name="arrFormacionProfesional{{index}}" #arrFormacionProfesional="ngModel"
+                            [ngClass]="{ 'is-invalid': !arrFormacionProfesional.valid && arrFormacionProfesional.touched,'is-valid': arrFormacionProfesional.valid}"
+                            required placeholder="Formación Profesional">
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Importancia</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" required>
+                                <option selected>Elegir...</option>
+                                <option value="Indispensable">Indispensable</option>
+                                <option value="Deseable">Deseable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" (click)="agregarFP()">Agregar formación
+                    profesional</button>
+                <br>
+
+                <div class="invalid-feedback">
+                    Ingrese almenos un requisito.
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger btn-block" id="button-addon2" (click)="eliminarFP(index) "
+                id="button-addon2 " *ngIf="requisitos.length !==1 && requisitos.length==( index+1) ">Eliminar formación
+                profesional</button>
+
+        </div>
+
+    </div>
+
+    <hr>
+    <!--------------------------------------------------------------------------------------------------->
+    <h4>Conocimientos</h4>
+    <div class="form-group">
+        <div class="form-row" *ngFor="let item of requisitosCon; let index=index">
+            <div class="form-group col">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" id="validationServer08" type="text"
+                            [(ngModel)]="requisitosCon[index].arrConocimientos" name="arrConocimientos{{index}}"
+                            #arrConocimientos="ngModel"
+                            [ngClass]="{ 'is-invalid': !arrConocimientos.valid && arrConocimientos.touched,'is-valid': arrConocimientos.valid}"
+                            required placeholder="Conocimientos">
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Importancia</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Elegir...</option>
+                                <option value="Indispensable">Indispensable</option>
+                                <option value="Deseable">Deseable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" (click)="agregarCon()">Agregar
+                    conocimiento</button>
+                <br>
+
+                <div class="invalid-feedback">
+                    Ingrese almenos un conocimiento.
+                </div>
+            </div>
+            <button class="btn btn-danger btn-block" type="button" id="button-addon2" (click)="eliminarCon(index) "
+                id="button-addon2 " *ngIf="requisitosCon.length !==1 && requisitosCon.length==( index+1) ">Eliminar
+                conocimiento</button>
+
+        </div>
+    </div>
+
+
+    <hr>
+    <!--------------------------------------------------------------------------------------------------->
+    <h4>Herramientas</h4>
+    <div class="form-group">
+        <div class="form-row" *ngFor="let item of requisitosHerr; let index=index">
+            <div class="form-group col">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" id="validationServer09"
+                            [(ngModel)]="requisitosHerr[index].arrHerramientas" name="arrHerramientas{{index}}"
+                            #arrHerramientas="ngModel"
+                            [ngClass]="{ 'is-invalid': !arrHerramientas.valid && arrHerramientas.touched,'is-valid': arrHerramientas.valid}"
+                            required placeholder="Herramientas">
+                    </div>
+                    <div class="col">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Importancia</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Elegir...</option>
+                                <option value="Indispensable">Indispensable</option>
+                                <option value="Deseable">Deseable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" (click)="agregarHerr()">Agregar
+                    herramienta</button>
+                <br>
+
+                <div class="invalid-feedback">
+                    Ingrese almenos una herramienta
+                </div>
+            </div>
+            <button class="btn btn-danger btn-block" type="button" id="button-addon2" (click)="eliminarHerr(index) "
+                id="button-addon2 " *ngIf="requisitosHerr.length !==1 && requisitosHerr.length==( index+1) ">Eliminar
+                herramienta</button>
+
+        </div>
+    </div>
+    <hr>
+    <!--------------------------------------------------------------------------------------------------->
+    <h4>Habilidades y destrezas</h4>
+    <div class="form-group">
+        <div class="form-row" *ngFor="let item of requisitosHD; let index=index">
+            <div class="form-group col">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" id="validationServer10"
+                            [(ngModel)]="requisitosHD[index].arrHabilidadesDestrezas"
+                            name="arrHabilidadesDestrezas{{index}}" #arrHabilidadesDestrezas="ngModel"
+                            [ngClass]="{ 'is-invalid': !arrHabilidadesDestrezas.valid && arrHabilidadesDestrezas.touched,'is-valid': arrHabilidadesDestrezas.valid}"
+                            required placeholder="Habilidades y destrezas">
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Importancia</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Elegir...</option>
+                                <option value="Indispensable">Indispensable</option>
+                                <option value="Deseable">Deseable</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" (click)="agregarHD()">Agregar habilidad y
+                    destreza</button>
+                <br>
+
+                <div class="invalid-feedback">
+                    Ingrese almenos una habilidad y destreza.
+                </div>
+            </div>
+            <button class="btn btn-danger btn-block" type="button" id="button-addon2" (click)="eliminarHD(index) "
+                id="button-addon2 " *ngIf="requisitosHD.length !==1 && requisitosHD.length==( index+1) ">Eliminar
+                habilidad
+                y/o destreza</button>
+
+        </div>
+    </div>
+    <hr>
+
+    <!--------------------------------------------------------------------------------------------------->
+
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">Agregar
+        perfil</button>
+</form>
