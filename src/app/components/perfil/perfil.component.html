@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class=" col-lg-3 col-md-12 mt-4 mb-4 ml-4 mr-5">
+            <app-registrar-perfil *ngIf="componentes.registrarPerfilComponent" (actualizarTabla)="obtenerPerfiles()"
+                [idPerfil]="idPerfil"></app-registrar-perfil>
+
+            <app-actualizar-perfil *ngIf="componentes.actualizarPerfilComponent" [componentes]="componentes"
+                [idPerfil]="idPerfil" (actualizarTabla)="obtenerPerfiles()"></app-actualizar-perfil>
+
+        </div>
+        <div class=" col-lg-8 col-sm-12 mt-4 mb-4">
+            <app-tabla-perfil *ngIf="componentes.tablaPerfilComponent" [componentes]="componentes"
+                (salida)="mostrarActualizar($event)" [perfiles]="perfiles">
+            </app-tabla-perfil>
+        </div>
+    </div>
+</div>
