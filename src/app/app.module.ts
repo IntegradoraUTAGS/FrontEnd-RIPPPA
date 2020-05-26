@@ -67,7 +67,7 @@ import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-per
     TablaDireccionesComponent,
     ActualizarAcademiasComponent,
     InsertarAcademiasComponent,
-    TablaAcademiasComponent
+    TablaAcademiasComponent,
     PerfilComponent,
     ActualizarPerfilComponent,
     RegistrarPerfilComponent,
