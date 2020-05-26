@@ -28,10 +28,16 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
 import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
 import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
+
+import { ActualizarAcademiasComponent } from './components/direcciones/actualizar-academias/actualizar-academias.component';
+import { InsertarAcademiasComponent } from './components/direcciones/insertar-academias/insertar-academias.component';
+import { TablaAcademiasComponent } from './components/direcciones/tabla-academias/tabla-academias.component';
+
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ActualizarPerfilComponent } from './components/perfil/actualizar-perfil/actualizar-perfil.component';
 import { RegistrarPerfilComponent } from './components/perfil/registrar-perfil/registrar-perfil.component';
 import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-perfil.component';
+
 
 
 
@@ -59,10 +65,14 @@ import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-per
     ActualizarDireccionesComponent,
     InsertarDireccionesComponent,
     TablaDireccionesComponent,
+    ActualizarAcademiasComponent,
+    InsertarAcademiasComponent,
+    TablaAcademiasComponent
     PerfilComponent,
     ActualizarPerfilComponent,
     RegistrarPerfilComponent,
     TablaPerfilComponent
+
   ],
   imports: [
     BrowserModule,

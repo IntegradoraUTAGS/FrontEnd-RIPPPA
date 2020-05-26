@@ -1,0 +1,28 @@
+<form (ngSubmit)="actualizar(forma)" class="animated fadeIn fast" #forma="ngForm">
+
+    <div class="form-group">
+        <h3>Actualizar Academias</h3>
+        <div class="form-group">
+ 
+            <select class="form-control" name="idDireccion" [(ngModel)]="academia.idDireccion" #idDireccion="ngModel"
+                id="validationServer02" required
+                [ngClass]="{ 'is-invalid': !idDireccion.valid && idDireccion.touched,'is-valid': idDireccion.valid}">
+                <option value="" selected="" hidden="" [ngValue]="undefined">Selecciona una Direccion</option>
+                <option [value]="direccion._id" *ngFor="let direccion of direcciones">{{direccion.strNombre}}</option>
+            </select>
+            <div class="invalid-feedback">
+                Ingrese el nombre de la dirección
+            </div>
+     
+        </div>
+        <input class="form-control" type="text" name="strNombre" id="validationServer01"
+            [(ngModel)]="academia.strNombre" #strNombre="ngModel" placeholder="Nombre de la academia"
+            required>
+
+        <div class=" invalid-feedback ">
+            Favor de ingresar una herramienta.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!forma.valid">Actualizar</button> <br>
+    <button class="btn btn-outline-danger btn-block" type="button" (click)="cancelar()">Cancelar</button>
+</form>
