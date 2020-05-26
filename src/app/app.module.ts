@@ -28,6 +28,9 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ActualizarDireccionesComponent } from './components/direcciones/actualizar-direcciones/actualizar-direcciones.component';
 import { InsertarDireccionesComponent } from './components/direcciones/insertar-direcciones/insertar-direcciones.component';
 import { TablaDireccionesComponent } from './components/direcciones/tabla-direcciones/tabla-direcciones.component';
+import { ActualizarAcademiasComponent } from './components/direcciones/actualizar-academias/actualizar-academias.component';
+import { InsertarAcademiasComponent } from './components/direcciones/insertar-academias/insertar-academias.component';
+import { TablaAcademiasComponent } from './components/direcciones/tabla-academias/tabla-academias.component';
 
 
 
@@ -54,7 +57,10 @@ import { TablaDireccionesComponent } from './components/direcciones/tabla-direcc
     AdminComponent,
     ActualizarDireccionesComponent,
     InsertarDireccionesComponent,
-    TablaDireccionesComponent
+    TablaDireccionesComponent,
+    ActualizarAcademiasComponent,
+    InsertarAcademiasComponent,
+    TablaAcademiasComponent
   ],
   imports: [
     BrowserModule,

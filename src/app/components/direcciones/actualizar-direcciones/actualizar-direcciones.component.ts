@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DireccionesModel } from 'src/app/models/direcciones';
 import { DireccionesService } from 'src/app/services/direcciones.service';
 import Swal from 'sweetalert2';
+import { AcademiasModel } from 'src/app/models/academias';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -22,7 +23,7 @@ export class ActualizarDireccionesComponent implements OnInit {
   @Output() salida = new EventEmitter();
   @Output() actualizarTablaDir = new EventEmitter()
   direccion: DireccionesModel = new DireccionesModel();
-
+ 
 
   constructor(private direccionService: DireccionesService) { }
 
