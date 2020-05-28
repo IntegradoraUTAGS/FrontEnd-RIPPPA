@@ -41,6 +41,9 @@ import { AdministradoresComponent } from './components/administradores/administr
 import { InsertarAdministradorComponent } from './components/administradores/insertar-administrador/insertar-administrador.component';
 import { ActualizarAdministradorComponent } from './components/administradores/actualizar-administrador/actualizar-administrador.component';
 import { TablaAdministradorComponent } from './components/administradores/tabla-administrador/tabla-administrador.component';
+import { InicioPerfilComponent } from './components/perfil/inicio-perfil/inicio-perfil.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 
@@ -79,7 +82,8 @@ import { TablaAdministradorComponent } from './components/administradores/tabla-
     AdministradoresComponent,
     InsertarAdministradorComponent,
     ActualizarAdministradorComponent,
-    TablaAdministradorComponent
+    TablaAdministradorComponent,
+    InicioPerfilComponent
 
   ],
   imports: [
@@ -87,7 +91,8 @@ import { TablaAdministradorComponent } from './components/administradores/tabla-
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService, AdministradorModel, AuthGuard, AuthService],

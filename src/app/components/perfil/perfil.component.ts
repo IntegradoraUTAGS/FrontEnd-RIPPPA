@@ -17,12 +17,14 @@ const Toast = Swal.mixin({
   providers: [AuthGuard, AuthService],
   styleUrls: ['./perfil.component.css']
 })
+
 export class PerfilComponent implements OnInit {
 
   componentes = {
     actualizarPerfilComponent: false,
-    registrarPerfilComponent: true,
+    registrarPerfilComponent: false,
     tablaPerfilComponent: true,
+    inicioPerfilComponent: true
   };
 
   perfiles: any;

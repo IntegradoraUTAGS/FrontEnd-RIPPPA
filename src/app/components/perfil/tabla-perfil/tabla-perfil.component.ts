@@ -2,6 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PerfilService } from '../../../services/perfil.service';
 import { PerfilModel } from 'src/app/models/perfil';
 import Swal from 'sweetalert2';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 const Toast = Swal.mixin({
   toast: true,
@@ -16,6 +20,9 @@ const Toast = Swal.mixin({
   styleUrls: ['./tabla-perfil.component.css']
 })
 export class TablaPerfilComponent implements OnInit {
+  faTrashAlt = faTrashAlt;
+  faEdit = faEdit;
+  faInfoCircle = faInfoCircle;
 
   @Input() componentes;
   @Output() salida = new EventEmitter();

@@ -37,11 +37,17 @@
         <td>{{perfil.strNombre}}</td>
         <td>{{perfil.idAcademia.strNombre}}</td>
 
-        <td><button class="btn btn-outline-success" type="button">Ver más</button>
+        <td><button class="btn btn-outline-success" type="button">
+                <fa-icon [icon]="faInfoCircle"></fa-icon>
+            </button>
         </td>
-        <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(perfil)">Eliminar</button>
+        <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(perfil)">
+                <fa-icon [icon]="faTrashAlt"></fa-icon>
+            </button>
         </td>
-        <td><button class="btn btn-outline-warning" type="button" (click)="actualizar(perfil._id)">Editar</button>
+        <td><button class="btn btn-outline-warning" type="button" (click)="actualizar(perfil._id)">
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </button>
         </td>
     </tr>
 </table>
