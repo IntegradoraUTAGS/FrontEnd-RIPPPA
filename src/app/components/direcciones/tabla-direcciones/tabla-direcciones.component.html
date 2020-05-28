@@ -1,17 +1,17 @@
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
-<table id="tab1" class="table table-striped ">
-    <tr>
-        <td>Direcciones Académicas</td>
-        <td>Eliminar</td>
-        <td>Editar</td>
-    </tr>
-    <tr *ngFor="let direccion of direcciones">
-        <td>{{direccion.strNombre}}</td>
-        <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(direccion)">Eliminar</button>
-        </td>
-        <td><button class="btn btn-outline-warning" type="button" (click)="actualizar(direccion._id)">Editar</button>
-        </td>
-    </tr>
-</table>
+    <table id="tab1" class="table table-striped ">
+        <tr>
+            <th scope="col">Direcciones Académicas</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
+        </tr>
+        <tr *ngFor="let direccion of direcciones">
+            <td>{{direccion.strNombre}}</td>
+            <td><button class="btn btn-outline-danger" type="button" (click)="eliminar(direccion)">Eliminar</button>
+            </td>
+            <td><button class="btn btn-outline-warning" type="button"
+                    (click)="actualizar(direccion._id)">Editar</button>
+            </td>
+        </tr>
+    </table>
 </div>
-

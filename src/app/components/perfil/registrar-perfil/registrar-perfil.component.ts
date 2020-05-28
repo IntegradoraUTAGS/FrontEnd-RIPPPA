@@ -24,24 +24,24 @@ export class RegistrarPerfilComponent implements OnInit {
   @Input() idPerfil;
   perfil: PerfilModel = new PerfilModel();
 
-  requisitos: any;
-  requisitosCon: any;
-  requisitosHerr: any;
-  requisitosHD: any;
-
   academias: PerfilModel[];
+
+  direcciones: PerfilModel[];
 
   constructor(private perfilService: PerfilService) { }
 
   ngOnInit(): void {
     this.obtenerAcademias();
-    this.requisitos = [{ arrFormacionProfesional: '' }];
-    this.requisitosCon = [{ arrConocimientos: '' }];
-    this.requisitosHerr = [{ arrHerramientas: '' }];
-    this.requisitosHD = [{ arrHabilidadesDestrezas: '' }];
+    this.perfil.arrConocimientos = [{ arrConocimientos: '' }];
+    this.perfil.arrFormacionProfesional = [{ arrFormacionProfesional: '' }];
+    this.perfil.arrHabilidadesDestrezas = [{ arrHabilidadesDestrezas: '' }];
+    this.perfil.arrHerramientas = [{ arrHerramientas: '' }];;
   }
 
   registrarPerfil(forma: NgForm) {
+
+    console.log(this.perfil);
+
     this.perfilService.registrarPerfil(this.perfil).then((resp: any) => {
       Toast.fire('Se agregó correctamente', '', 'success');
       forma.resetForm();
@@ -60,56 +60,39 @@ export class RegistrarPerfilComponent implements OnInit {
   }
   //fORMACION PROFESIONAL
   agregarFP() {
-    this.requisitos.push({ arrFormacionProfesional: '' });
-    console.log(this.requisitos);
-
+    this.perfil.arrFormacionProfesional.push({ arrFormacionProfesional: '' });
+    console.log(this.perfil.arrFormacionProfesional);
   }
 
   eliminarFP(index: number) {
-    this.requisitos.splice(index, 1);
+    this.perfil.arrFormacionProfesional.splice(index, 1);
   }
   //CONOCIMIENTOS
   agregarCon() {
-    this.requisitosCon.push({ arrConocimientos: '' });
-    console.log(this.requisitosCon);
-
+    this.perfil.arrConocimientos.push({ arrConocimientos: '' });
+    console.log(this.perfil.arrConocimientos);
   }
-
   eliminarCon(index: number) {
-    this.requisitosCon.splice(index, 1);
+    this.perfil.arrConocimientos.splice(index, 1);
   }
   //HERRAMIENTAS
   agregarHerr() {
-    this.requisitosHerr.push({ arrHerramientas: '' });
-    console.log(this.requisitosHerr);
+    this.perfil.arrHerramientas.push({ arrHerramientas: '' });
+    console.log(this.perfil.arrHerramientas);
 
   }
 
   eliminarHerr(index: number) {
-    this.requisitosHerr.splice(index, 1);
+    this.perfil.arrHerramientas.splice(index, 1);
   }
   //HABILIDADES Y DESTREZAS
   agregarHD() {
-    this.requisitosHD.push({ arrHabilidadesDestrezas: '' });
-    console.log(this.requisitosHD);
+    this.perfil.arrHabilidadesDestrezas.push({ arrHabilidadesDestrezas: '' });
+    console.log(this.perfil.arrHabilidadesDestrezas);
 
   }
 
   eliminarHD(index: number) {
-    this.requisitosHD.splice(index, 1);
+    this.perfil.arrHabilidadesDestrezas.splice(index, 1);
   }
-
-
-
-
-  enviar() {
-    console.log(this.requisitos);
-    console.log(this.requisitosHerr);
-    console.log(this.requisitosCon);
-    console.log(this.requisitosHD);
-    console.log(this.perfil);
-
-  }
-
-
 }

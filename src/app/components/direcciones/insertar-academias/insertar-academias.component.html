@@ -1,11 +1,8 @@
 <form class="animated fadeIn fast" (ngSubmit)="registrarAcademia(forma)" #forma="ngForm">
-
-    
-
     <div class="form-group">
         <h3>Académias</h3>
         <div class="form-group">
- 
+
             <select class="form-control" name="idDireccion" [(ngModel)]="academia.idDireccion" #idDireccion="ngModel"
                 id="validationServer02" required
                 [ngClass]="{ 'is-invalid': !idDireccion.valid && idDireccion.touched,'is-valid': idDireccion.valid}">
@@ -15,7 +12,7 @@
             <div class="invalid-feedback">
                 Ingrese el nombre de la dirección
             </div>
-     
+
         </div>
         <input class="form-control" type="text" placeholder="Nombre de la académia" id=" validationServer01"
             name="strNombre" [(ngModel)]="academia.strNombre" #strNombre="ngModel" required>

@@ -1,52 +1,49 @@
-
 <div class="container-fluid">
-    
     <div class="row">
-      <div class=" col-lg-3 col-md-12 mt-4 mb-4 ml-4 mr-5">
-          <div class="">
-        <app-insertar-direcciones *ngIf="componentes.registrarDireccionesComponent"
-            (actualizarTablaDir)="obtenerDirecciones()" [idDireccion]="idDireccion">
-        </app-insertar-direcciones>
+        <div class=" col-lg-3 col-md-12 mt-4 mb-4 ml-4 mr-5">
+            <div class="">
+                <app-insertar-direcciones *ngIf="componentes.registrarDireccionesComponent"
+                    (actualizarTablaDir)="obtenerDirecciones()" [idDireccion]="idDireccion">
+                </app-insertar-direcciones>
 
-        <app-actualizar-direcciones *ngIf="componentes.actualizarDireccionesComponent" [componentes]="componentes"
-            (actualizarTablaDir)="obtenerDirecciones()" [idDireccion]="idDireccion">
-        </app-actualizar-direcciones>
+                <app-actualizar-direcciones *ngIf="componentes.actualizarDireccionesComponent"
+                    [componentes]="componentes" (actualizarTablaDir)="obtenerDirecciones()" [idDireccion]="idDireccion">
+                </app-actualizar-direcciones>
+            </div>
+        </div>
+
+        <div class=" col-lg-8 col-sm-12 mt-4 mb-4">
+            <div class="">
+                <app-tabla-direcciones *ngIf="componentes.tablaDireccionesComponent" [componentes]="componentes"
+                    (salida)="mostrarActualizar($event)" [direcciones]="direcciones">
+                </app-tabla-direcciones>
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-12 mt-4 mb-4 ml-4 mr-5">
+
+            <div class="">
+                <app-insertar-academias *ngIf="componentes.registrarAcademiasComponent"
+                    (actualizarTablaAcademias)="obtenerAcademias()" [idAcademia]="idAcademia">
+                </app-insertar-academias>
+
+                <app-actualizar-academias *ngIf="componentes.actualizarAcademiasComponent" [componentes]="componentes"
+                    (actualizarTablaAcademias)="obtenerAcademias()" [idAcademia]="idAcademia">
+                </app-actualizar-academias>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-8 col-sm-12 mt-4 mb-4">
+
+            <div class=" ">
+                <app-tabla-academias *ngIf="componentes.tablaAcademiasComponent" [componentes]="componentes"
+                    (salida)="mostrarActualizarAcademia($event)" [academias]="academias">
+                </app-tabla-academias>
+            </div>
+
+        </div>
     </div>
 </div>
-      <div class=" col-lg-8 col-sm-12 mt-4 mb-4"> 
-          <div class="">
-        <app-tabla-direcciones *ngIf="componentes.tablaDireccionesComponent" [componentes]="componentes"
-            (salida)="mostrarActualizar($event)" [direcciones]="direcciones">
-        </app-tabla-direcciones>
-    </div>
-    
-</div>
-
-      <div class="col-lg-3 col-md-12 mt-4 mb-4 ml-4 mr-5"> 
-          <div class="">
-        <app-insertar-academias *ngIf="componentes.registrarAcademiasComponent"
-            (actualizarTablaAcademias)="obtenerAcademias()" [idAcademia]="idAcademia">
-        </app-insertar-academias>
-
-        <app-actualizar-academias *ngIf="componentes.actualizarAcademiasComponent" [componentes]="componentes"
-            (actualizarTablaAcademias)="obtenerAcademias()" [idAcademia]="idAcademia">
-        </app-actualizar-academias>
-
-    </div>
-    
-</div>
-
-      <div class="col-lg-8 col-sm-12 mt-4 mb-4"> 
-          <div class=" ">
-        <app-tabla-academias *ngIf="componentes.tablaAcademiasComponent" [componentes]="componentes"
-            (salida)="mostrarActualizarAcademia($event)" [academias]="academias">
-        </app-tabla-academias>
-    </div>
-   
-</div>
-<a class="btn btn-outline-success" href="perfil">Gestionar Perfiles</a>
-    </div>
-  
-  
-</div>
-

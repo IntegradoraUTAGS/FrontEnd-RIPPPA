@@ -37,6 +37,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ActualizarPerfilComponent } from './components/perfil/actualizar-perfil/actualizar-perfil.component';
 import { RegistrarPerfilComponent } from './components/perfil/registrar-perfil/registrar-perfil.component';
 import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-perfil.component';
+import { AdministradoresComponent } from './components/administradores/administradores.component';
+import { InsertarAdministradorComponent } from './components/administradores/insertar-administrador/insertar-administrador.component';
+import { ActualizarAdministradorComponent } from './components/administradores/actualizar-administrador/actualizar-administrador.component';
+import { TablaAdministradorComponent } from './components/administradores/tabla-administrador/tabla-administrador.component';
 
 
 
@@ -71,7 +75,11 @@ import { TablaPerfilComponent } from './components/perfil/tabla-perfil/tabla-per
     PerfilComponent,
     ActualizarPerfilComponent,
     RegistrarPerfilComponent,
-    TablaPerfilComponent
+    TablaPerfilComponent,
+    AdministradoresComponent,
+    InsertarAdministradorComponent,
+    ActualizarAdministradorComponent,
+    TablaAdministradorComponent
 
   ],
   imports: [
