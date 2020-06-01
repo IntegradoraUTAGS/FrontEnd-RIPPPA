@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       if (localStorage.getItem('token')) {
 
         this.router.navigateByUrl('admin');
-        location.reload();
+       // location.reload();
       }
 
 
