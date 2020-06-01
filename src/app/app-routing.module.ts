@@ -12,6 +12,8 @@ import { AdminComponent } from "./components/admin/admin.component";
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { ConvocatoriaComponent } from "./components/convocatoria/convocatoria.component"
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { AdministradoresComponent } from "./components/administradores/administradores.component";
+
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -23,7 +25,8 @@ const routes: Routes = [
   { path: 'profesor', component: ProfesorComponent },
   { path: 'convocatoria', component: ConvocatoriaComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: 'perfil', component: PerfilComponent }
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'Administrador', component: AdministradoresComponent}
 
 ];
 
