@@ -41,10 +41,11 @@ export class TablaPerfilComponent implements OnInit {
   }
 
   actualizar(idPerfil: string) {
-    this.componentes.registrarPerfilComponent = false;
+    this.componentes.tablaPerfilComponent = false;
     this.componentes.actualizarPerfilComponent = true;
     this.salida.emit(idPerfil);
   }
+
   eliminar(perfil: PerfilModel) {
     Swal.fire({
       title: `¿Estás seguro qué deseas eliminar ${perfil.strNombre}?`,
@@ -59,8 +60,8 @@ export class TablaPerfilComponent implements OnInit {
       if (result.value) {
         this.perfilService.eliminarPerfil(perfil._id).then((perfil: any) => {
           Toast.fire('Se ha eliminado correctamente', '', 'success');
-          this.componentes.registrarPerfilComponent = true;
-          this.componentes.actualizarPerfilComponent = false;
+          this.componentes.tablaPerfilComponent = false;
+          this.componentes.tablaPerfilComponent = true;
           this.ngOnInit();
         }).catch((err: any) => {
           Toast.fire(err.error.msg, '', 'error');

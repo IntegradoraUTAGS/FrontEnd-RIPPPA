@@ -10,14 +10,18 @@ export class PerfilService {
 
     url = `${environment.urlLocal}perfil`;
     urla = `${environment.urlLocal}academias`;
+    urld = `${environment.urlLocal}direccion`;
 
     constructor(private http: HttpClient) { }
-
+    y
     obtenerPerfiles() {
         return this.http.get(`${this.url}/obtener`).toPromise();
     }
     obtenerAcademias() {
         return this.http.get(`${this.urla}/obtener`).toPromise();
+    }
+    obtenerDirecciones() {
+        return this.http.get(`${this.urld}/obtener`).toPromise();
     }
 
     obtenerPerfilid(idPerfil: String) {

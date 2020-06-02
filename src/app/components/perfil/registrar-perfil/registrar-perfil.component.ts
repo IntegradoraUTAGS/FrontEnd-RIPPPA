@@ -3,6 +3,8 @@ import Swal from 'sweetalert2';
 import { PerfilModel } from '../../../models/perfil';
 import { PerfilService } from '../../../services/perfil.service';
 import { NgForm } from '@angular/forms';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 const Toast = Swal.mixin({
@@ -19,6 +21,10 @@ const Toast = Swal.mixin({
 })
 export class RegistrarPerfilComponent implements OnInit {
 
+
+  faTrashAlt = faTrashAlt;
+  faPlusSquare = faPlusSquare;
+
   @Input() componentes;
   @Output() actualizarTabla = new EventEmitter()
   @Input() idPerfil;
@@ -32,6 +38,7 @@ export class RegistrarPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerAcademias();
+    this.obtenerDirecciones();
     this.perfil.arrConocimientos = [{ arrConocimientos: '' }];
     this.perfil.arrFormacionProfesional = [{ arrFormacionProfesional: '' }];
     this.perfil.arrHabilidadesDestrezas = [{ arrHabilidadesDestrezas: '' }];
@@ -54,6 +61,13 @@ export class RegistrarPerfilComponent implements OnInit {
   obtenerAcademias() {
     this.perfilService.obtenerAcademias().then((resp: any) => {
       this.academias = resp.academias;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+  obtenerDirecciones() {
+    this.perfilService.obtenerDirecciones().then((resp: any) => {
+      this.direcciones = resp.direcciones;
     }).catch((err) => {
       console.log(err);
     });
@@ -94,5 +108,10 @@ export class RegistrarPerfilComponent implements OnInit {
 
   eliminarHD(index: number) {
     this.perfil.arrHabilidadesDestrezas.splice(index, 1);
+  }
+
+  cancelarRegistro() {
+    this.componentes.inicioPerfilComponent = true;
+    this.componentes.registrarPerfilComponent = false;
   }
 }

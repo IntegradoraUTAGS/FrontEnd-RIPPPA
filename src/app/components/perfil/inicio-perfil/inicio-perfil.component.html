@@ -1,23 +1,28 @@
-<div class="row row-cols-1 row-cols-md-2">
-    <div class="col mb-4">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
+<div class="row mt-5">
+    <div class="col-sm-6">
+        <a (click)="agregar()">
+            <div class=" card text-white bg-success mb-3 rounded text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-shadow: 2px 2px 2px black; font-weight: bold; font-size: 30px;">
+                        Agregar perfil
+                        académico
+                    </h5>
+                    <fa-icon style="font-size: 1cm;" [icon]="faPlusCircle"></fa-icon>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-            </div>
-        </div>
-    </div>
+    <div class="col-sm-6">
+        <a (click)="gestionar()">
+            <div class="card text-white bg-warning mb-3 rounded text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-shadow: 2px 2px 2px black; font-weight: bold; font-size: 30px;">
+                        Gestionar pefiles
+                        académicos</h5>
+                    <fa-icon style="font-size: 1cm;" [icon]=" faEdit"></fa-icon>
 
+                </div>
+            </div>
+        </a>
+    </div>
 </div>

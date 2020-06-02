@@ -23,7 +23,7 @@ export class PerfilComponent implements OnInit {
   componentes = {
     actualizarPerfilComponent: false,
     registrarPerfilComponent: false,
-    tablaPerfilComponent: true,
+    tablaPerfilComponent: false,
     inicioPerfilComponent: true
   };
 

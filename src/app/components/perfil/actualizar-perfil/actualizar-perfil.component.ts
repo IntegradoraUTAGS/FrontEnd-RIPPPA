@@ -17,6 +17,10 @@ const Toast = Swal.mixin({
 })
 export class ActualizarPerfilComponent implements OnInit {
 
+  academias: PerfilModel[];
+
+  direcciones: PerfilModel[];
+
   @Input() componentes;
   @Input() idPerfil;
   @Output() salida = new EventEmitter();
@@ -28,8 +32,25 @@ export class ActualizarPerfilComponent implements OnInit {
 
 
   ngOnInit() {
+    this.obtenerAcademias();
     this.perfilService.obtenerPerfilid(this.idPerfil).then((resp: any) => {
       this.perfil = resp.perfil;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  obtenerAcademias() {
+    this.perfilService.obtenerAcademias().then((resp: any) => {
+      this.academias = resp.academias;
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+  obtenerDirecciones() {
+    this.perfilService.obtenerDirecciones().then((resp: any) => {
+      this.direcciones = resp.direcciones;
     }).catch((err) => {
       console.log(err);
     });
@@ -50,8 +71,46 @@ export class ActualizarPerfilComponent implements OnInit {
   }
 
   cancelar() {
-    this.componentes.registrarPerfilComponent = true;
     this.componentes.actualizarPerfilComponent = false;
+    this.componentes.tablaPerfilComponent = true;
   }
+
+  agregarFP() {
+    this.perfil.arrFormacionProfesional.push({ arrFormacionProfesional: '' });
+    console.log(this.perfil.arrFormacionProfesional);
+  }
+
+  eliminarFP(index: number) {
+    this.perfil.arrFormacionProfesional.splice(index, 1);
+  }
+  //CONOCIMIENTOS
+  agregarCon() {
+    this.perfil.arrConocimientos.push({ arrConocimientos: '' });
+    console.log(this.perfil.arrConocimientos);
+  }
+  eliminarCon(index: number) {
+    this.perfil.arrConocimientos.splice(index, 1);
+  }
+  //HERRAMIENTAS
+  agregarHerr() {
+    this.perfil.arrHerramientas.push({ arrHerramientas: '' });
+    console.log(this.perfil.arrHerramientas);
+
+  }
+
+  eliminarHerr(index: number) {
+    this.perfil.arrHerramientas.splice(index, 1);
+  }
+  //HABILIDADES Y DESTREZAS
+  agregarHD() {
+    this.perfil.arrHabilidadesDestrezas.push({ arrHabilidadesDestrezas: '' });
+    console.log(this.perfil.arrHabilidadesDestrezas);
+
+  }
+
+  eliminarHD(index: number) {
+    this.perfil.arrHabilidadesDestrezas.splice(index, 1);
+  }
+
 
 }
